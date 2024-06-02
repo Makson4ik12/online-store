@@ -4,13 +4,11 @@ import ShopInstagram from '../../components/ShopInstagram.js';
 import BigTitle from '../../components/BigTitle.js';
 import PageDirectory from '../../components/PageDirectory.js';
 
-function DeliveryPage(props) {
+const DeliveryPage = () => {
 	return  (
 		<div className="exchange-page-container">
 			<PageDirectory pages={[{page: "/", title: "Главная"}]} currentPage="Доставка и оплата"/>
-
 			<BigTitle title="ДОСТАВКА И ОПЛАТА" description="УСЛОВИЯ ДОСТАВКИ И ОПЛАТЫ" titleFontSize="3.1vw" descrFontSize="1.5vw" rightWaveOffset="0.5vw"/>
-
 			<div className="exchange-container">
 				<div className='exchange-container-line'>
 					<div className='exchange-container-item'>
@@ -214,12 +212,11 @@ function DeliveryPage(props) {
 
 						<p>При оплате онлайн никаких больше дополнительных процентов</p>
 					</div>
-
 				</div>
 			</div>
 
 			<ShopInstagram />
-			<BottomBar changeContent={props.changeContent}/>
+			<BottomBar/>
 		</div>
 	);
 }

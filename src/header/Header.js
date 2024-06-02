@@ -12,7 +12,7 @@ const Header = () => {
 
   const [searchCurrentText, setSearchCurrentText] = useState("");
   const [selectedButton, setMenuButton] = useState(null);
-  const [isSearcMode, changeSearchMode] = useState(false);
+  const [searcMode, changeSearchMode] = useState(false);
   //const { height, width } = useWindowDimensions();
 
   const selectMenuButton = (activeButton, page) => {
@@ -45,7 +45,7 @@ const Header = () => {
 
           <div className="HeaderBottomMenu">
             {
-              !isSearcMode 
+              !searcMode 
               ? 
               menuButtons.map((button) => 
                 <button 
@@ -127,8 +127,8 @@ const HeaderLogo = (props) => {
   
 const HeaderRightDesktop = (props) => {
   const navigate = useNavigate();
-  const [viewShopcart, onShowShopcart] = useState(false);
-  const [viewWishlist, onShowWishlist] = useState(false);
+  const [viewShopcart, setViewShopcart] = useState(false);
+  const [viewWishlist, setViewWishlist] = useState(false);
 
   const openWishlist = () => {
     const favouriteProductsList = LocalDB.getLSItems('favouriteProductsList');
@@ -136,7 +136,7 @@ const HeaderRightDesktop = (props) => {
     if (favouriteProductsList.size > 0) {
       navigate("/wishlist");
     } else {
-      onShowWishlist(true);
+      setViewWishlist(true);
     }
   }
 
@@ -149,23 +149,23 @@ const HeaderRightDesktop = (props) => {
           <path d="M5.99976 1C3.23876 1 0.999756 3.216 0.999756 5.95C0.999756 8.157 1.87476 13.395 10.4878 18.69C10.642 18.7839 10.8192 18.8335 10.9998 18.8335C11.1804 18.8335 11.3575 18.7839 11.5118 18.69C20.1248 13.395 20.9998 8.157 20.9998 5.95C20.9998 3.216 18.7608 1 15.9998 1C13.2388 1 10.9998 4 10.9998 4C10.9998 4 8.76076 1 5.99976 1Z" stroke="#1F1F1F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
 
-      <svg onClick={() => onShowShopcart(true)} className='HeaderIcon' viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" >
+      <svg onClick={() => setViewShopcart(true)} className='HeaderIcon' viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" >
         <path d="M2.05065 7.92C2.07076 7.6694 2.18452 7.43557 2.36928 7.26508C2.55404 7.09459 2.79624 6.99995 3.04765 7H16.9516C17.2031 6.99995 17.4453 7.09459 17.63 7.26508C17.8148 7.43557 17.9285 7.6694 17.9486 7.92L18.8256 18.84C18.8477 19.1152 18.8126 19.392 18.7225 19.6529C18.6323 19.9139 18.4892 20.1533 18.302 20.3562C18.1147 20.5592 17.8875 20.7211 17.6347 20.8319C17.3818 20.9427 17.1087 20.9999 16.8326 21H3.16665C2.89057 20.9999 2.6175 20.9427 2.36463 20.8319C2.11175 20.7211 1.88456 20.5592 1.69734 20.3562C1.51013 20.1533 1.36695 19.9139 1.27682 19.6529C1.18669 19.392 1.15156 19.1152 1.17365 18.84L2.04965 7.92H2.05065Z" stroke="#1F1F1F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M13.9998 10V5C13.9998 3.93913 13.5783 2.92172 12.8282 2.17157C12.078 1.42143 11.0606 1 9.99976 1C8.93889 1 7.92147 1.42143 7.17133 2.17157C6.42118 2.92172 5.99976 3.93913 5.99976 5V10" stroke="#1F1F1F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
 
-      <Modal open={viewShopcart} onClose={() => onShowShopcart(false)} classNames={{modal: 'shopcart-modal'}} closeIcon={
+      <Modal open={viewShopcart} onClose={() => setViewShopcart(false)} classNames={{modal: 'shopcart-modal'}} closeIcon={
         <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="23" cy="23" r="22" fill="white" stroke="black" strokeWidth="2"/>
           <path d="M33.1858 12.792L12.3906 32.7865" stroke="#1F1F1F" strokeWidth="2" strokeLinecap="round"/>
           <path d="M12.7908 12.3921L32.7853 33.1873" stroke="#1F1F1F" strokeWidth="2" strokeLinecap="round"/>
         </svg>
         }>
-        <Shopcart closeHandler={() => onShowShopcart(false)}/>
+        <Shopcart closeHandler={() => setViewShopcart(false)}/>
       </Modal>
 
-      <Modal open={viewWishlist} onClose={() => onShowWishlist(false)} center>
-        <EmptyWishList onClose={() => onShowWishlist(false)}/>
+      <Modal open={viewWishlist} onClose={() => setViewWishlist(false)} center>
+        <EmptyWishList onClose={() => setViewWishlist(false)}/>
       </Modal>
     </div>
   );

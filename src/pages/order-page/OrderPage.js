@@ -119,15 +119,11 @@ const OrderPage = () => {
               </div>
             </div>
           </div> 
-
           <PinkVectorButton text="Подтвердить заказ" width="20vw" textSize="0.7vw" click={() => onAcceptOrder(true)}/>          
         </div>
-
         <Shopcart isComponent="true"/>
       </div>
-
       <BottomBar/>
-
       <Modal open={acceptedOrder} onClose={() => onAcceptOrder(false)} center>
         <AcceptedOrder />
       </Modal>
@@ -135,7 +131,7 @@ const OrderPage = () => {
   );
 }
 
-function Title(props) {
+const Title = (props) => {
   return (
     <div className='order-page-title'>
       <h1>{props.number}</h1>
@@ -148,7 +144,7 @@ function Title(props) {
   );
 }
 
-function AcceptedOrder() {
+const AcceptedOrder = () => {
   return (
     <div className='accepted-order-container'>
       <BigTitle title="СПАСИБО" description="Ваш заказ был принят" titleFontSize="8vh" descrFontSize="3.5vh" rightWaveOffset="-10vh" />

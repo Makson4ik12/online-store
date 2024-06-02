@@ -4,13 +4,11 @@ import ShopInstagram from '../../components/ShopInstagram.js';
 import BigTitle from '../../components/BigTitle.js';
 import PageDirectory from '../../components/PageDirectory.js';
 
-function LoyaltyPage(props) {
+const LoyaltyPage = () => {
 	return  (
 		<div className="loyalty-page-container">
 			<PageDirectory pages={[{page: "/", title: "Главная"}]} currentPage="Бонусная система"/>
-
 			<BigTitle title="ВСЕ О ЛОЯЛЬНОСТИ" description="СИСТЕМА ЛОЯЛЬНОСТИ" titleFontSize="3.1vw" descrFontSize="1.5vw" rightWaveOffset="0.5vw"/>
-
 			<div className='loyalty-card-container'>
 				<div className='loyalty-card-content'>
 					<svg width="276" height="271" viewBox="0 0 276 271" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -167,9 +165,8 @@ function LoyaltyPage(props) {
 					<p-pink-info>&emsp;*Баллами можно рассчитываться только за те вещи, которые находятся не на скидке</p-pink-info>
 				</div>
 			</div>
-
 			<ShopInstagram withHints={true}/>
-			<BottomBar changeContent={props.changeContent}/>
+			<BottomBar/>
 		</div>
 	);
 }

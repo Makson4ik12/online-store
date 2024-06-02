@@ -1,9 +1,7 @@
-import {useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './BottomBar.css'
 
-function BottomBar() {
-  const navigate = useNavigate();
-
+const BottomBar = () => {
   return (
     <div className="bottom-bar-container">
       <svg width="96" height="25" viewBox="0 0 96 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,10 +21,10 @@ function BottomBar() {
       <div className="bottom-bar-info-container">
         <h1>ИНФО</h1>
         <ul>
-          <li onClick={() => navigate('/contacts')}>Контакты</li>
-          <li onClick={() => navigate('/loyalty')}>Система лояльности</li>
-          <li onClick={() => navigate('/exchange')}>Обмен и возврат</li>
-          <li onClick={() => navigate('/delivery')}>Доставка и оплата</li>
+          <Link to="/contacts">Контакты</Link>
+          <Link to="/loyalty">Система лояльности</Link>
+          <Link to="/exchange">Обмен и возврат</Link>
+          <Link to="/delivery">Доставка и оплата</Link>
         </ul>
       </div>
 

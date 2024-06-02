@@ -1,7 +1,7 @@
 import PinkVectorButton from './PinkVectorButton';
 import './ShopMap.css'
 
-function ShopMap() {
+const ShopMap = () => {
   return (
     <div className="shopmap-container">
       <img style={{width: "50%"}} src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/2bc9e024fe0016f1f601b3d3b8cd6cd8b43f824f"/>

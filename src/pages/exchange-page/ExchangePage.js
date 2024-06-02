@@ -4,13 +4,11 @@ import ShopInstagram from '../../components/ShopInstagram.js';
 import BigTitle from '../../components/BigTitle.js';
 import PageDirectory from '../../components/PageDirectory.js';
 
-function ExchangePage(props) {
+const ExchangePage = () => {
 	return  (
 		<div className="exchange-page-container">
 			<PageDirectory pages={[{page: "/", title: "Главная"}]} currentPage="Обмен и возврат"/>
-
 			<BigTitle title="ОБМЕН И ВОЗВРАТ" description="ПРАВИЛА ОБМЕнА И ВОЗВРАТА" titleFontSize="3.1vw" descrFontSize="1.5vw" rightWaveOffset="0.5vw"/>
-
 			<div className="exchange-container">
 				<div className='exchange-container-line'>
 					<div className='exchange-container-item'>
@@ -141,12 +139,10 @@ function ExchangePage(props) {
 
 						<p>При возврате, деньги возвращаются  в течение 5 рабочих дней, после того как забрали вещь с почты и получили реквизиты для возврата.</p>
 					</div>
-
 				</div>
 			</div>
-
 			<ShopInstagram />
-			<BottomBar changeContent={props.changeContent}/>
+			<BottomBar/>
 		</div>
 	);
 }
