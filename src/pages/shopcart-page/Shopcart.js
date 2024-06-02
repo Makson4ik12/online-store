@@ -87,7 +87,7 @@ const Shopcart = (props) => {
   }
 }
 
-function Shopcartitem(props) {
+const Shopcartitem = (props) => {
   return (
     <div className='shopcart-item'>
       <img src={props.product.img} />
