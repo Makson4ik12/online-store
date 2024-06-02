@@ -4,13 +4,17 @@ import {useNavigate} from 'react-router-dom';
 import LocalDB from '../test-data/LocalDB'
 
 const ProductCard = (props) => {
-  const favouriteProductsList = LocalDB.getLSItems('favouriteProductsList')
   const [likeButton, setLikeButton] = useState(null);
+  const favouriteProductsList = LocalDB.getLSItems('favouriteProductsList')
   const navigate = useNavigate();
 
   const likedButton = 
     <svg 
-      onClick={() => { setLikeButton(unlikedButton); LocalDB.deleteItem('favouriteProductsList', props.id); }} 
+      onClick={e => { 
+        e.stopPropagation();
+        setLikeButton(unlikedButton); 
+        LocalDB.deleteItem('favouriteProductsList', props.id); 
+      }} 
       width="26" 
       height="24" 
       viewBox="0 0 26 24" 
@@ -23,7 +27,11 @@ const ProductCard = (props) => {
 
   const unlikedButton = 
     <svg 
-      onClick={() => { setLikeButton(likedButton); LocalDB.addItem('favouriteProductsList', props.id); }}
+      onClick={e => { 
+        e.stopPropagation();
+        setLikeButton(likedButton); 
+        LocalDB.addItem('favouriteProductsList', props.id);
+      }}
       width="26"
       height="24"
       viewBox="0 0 26 24"
@@ -38,12 +46,16 @@ const ProductCard = (props) => {
   }, []);
 
   return (
-    <div className="product-card-container" style={{width: props.width, height: props.height, margin: props.margin || 0}}>
+    <div 
+      className="product-card-container" 
+      style={{width: props.width, height: props.height, margin: props.margin || 0}}
+      onClick={() => navigate("/product-page", {state: {productId: props.id}})}
+    >
       <div className="product-card-top-container">
-        <img src={props.img} onClick={() => navigate("/product-page", {state: {productId: props.id}})}/>
+        <img src={props.img}/>
         {likeButton}
       </div>
-      <div className="product-card-bottom-container"  onClick={() => navigate("/product-page", {state: {productId: props.id}})}>
+      <div className="product-card-bottom-container">
         <name style={{fontSize: props.nameFont}}>{props.descr}</name>
         <price style={{fontSize: props.priceFont}}>{props.price}</price>
       </div>
