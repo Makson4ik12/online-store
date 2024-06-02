@@ -80,7 +80,7 @@ const ShopInstagram = ({withHints = false}) => {
 
   return (
     <div className="shop-instagram-container">
-      {withHints == true
+      {withHints === true
       ?
       <div className="hints-container">
         {hints.map((item) => 

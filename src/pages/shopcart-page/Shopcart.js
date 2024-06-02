@@ -31,13 +31,13 @@ const Shopcart = ({isComponent = false, closeHandler = () => {}}) => {
   if(shopcartItems.length > 0) {
     return (
       <div className='shopcart-container'>
-        <h1>{isComponent == true ? "Товары в Корзине:" : "КОРЗИНА"}</h1>
+        <h1>{isComponent === true ? "Товары в Корзине:" : "КОРЗИНА"}</h1>
 
         <div className='shopcart-items-container' style={{height: window.innerHeight * 3/5}}>
           { shopcartItems.map((item) => <Shopcartitem product={item} removeHandler={removeItem}/>) }
         </div>
         
-        {isComponent == true 
+        {isComponent === true 
         ? 
           <div className='shopcart-text-component'>
             <div className='shopcart-text-component-text'>

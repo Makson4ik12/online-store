@@ -60,7 +60,7 @@ const ProductCard = ({
     <div 
       className="product-card-container" 
       style={{width: width, height: height, margin: margin}}
-      onClick={() => navigate("/product-page", {state: {productId: id}})}
+      onClick={() => navigate("/product", {state: {productId: id}})}
     >
       <div className="product-card-top-container">
         <img src={img}/>

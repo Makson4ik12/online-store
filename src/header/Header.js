@@ -12,7 +12,7 @@ const Header = () => {
 
   const [searchCurrentText, setSearchCurrentText] = useState("");
   const [selectedButton, setMenuButton] = useState(null);
-  const [searcMode, changeSearchMode] = useState(false);
+  const [searcрMode, changeSearchMode] = useState(false);
   //const { height, width } = useWindowDimensions();
 
   const selectMenuButton = (activeButton, page) => {
@@ -27,7 +27,7 @@ const Header = () => {
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
-      //openPage(props.changeContent, <SearchPage searchText={e.target.value}/>);
+      navigate("/search", {state: {searchText: e.target.value}});
     }
   }
 
@@ -45,7 +45,7 @@ const Header = () => {
 
           <div className="HeaderBottomMenu">
             {
-              !searcMode 
+              !searcрMode 
               ? 
               menuButtons.map((button) => 
                 <button 
@@ -57,18 +57,16 @@ const Header = () => {
               :
               <div className="header-big-search-container">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" /*onClick={() => openPage(props.changeContent, <SearchPage searchText={searchRef.current.value}/>)}*/>
-                  <path fillRule="evenodd" clip-rule="evenodd" d="M18 9C18 4.032 13.968 0 9 0C4.032 0 0 4.032 0 9C0 13.968 4.032 18 9 18C13.968 18 18 13.968 18 9ZM16 9C16 12.867 12.867 16 9 16C5.132 16 2 12.867 2 9C2 5.132 5.132 2 9 2C12.867 2 16 5.132 16 9ZM16.6618 16.8935C16.3395 17.2139 16.3379 17.7349 16.6583 18.0572L18.315 19.7237C18.6353 20.046 19.1563 20.0476 19.4787 19.7272L19.7289 19.4785C20.0512 19.1581 20.0527 18.6371 19.7323 18.3148L18.0757 16.6482C17.7553 16.3259 17.2343 16.3244 16.912 16.6448L16.6618 16.8935Z" fill="#909090"/>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M18 9C18 4.032 13.968 0 9 0C4.032 0 0 4.032 0 9C0 13.968 4.032 18 9 18C13.968 18 18 13.968 18 9ZM16 9C16 12.867 12.867 16 9 16C5.132 16 2 12.867 2 9C2 5.132 5.132 2 9 2C12.867 2 16 5.132 16 9ZM16.6618 16.8935C16.3395 17.2139 16.3379 17.7349 16.6583 18.0572L18.315 19.7237C18.6353 20.046 19.1563 20.0476 19.4787 19.7272L19.7289 19.4785C20.0512 19.1581 20.0527 18.6371 19.7323 18.3148L18.0757 16.6482C17.7553 16.3259 17.2343 16.3244 16.912 16.6448L16.6618 16.8935Z" fill="#909090"/>
                 </svg>
-
                 <input className="header-big-search" placeholder={searchCurrentText} onKeyDown={handleKeyDown} type='text' ref={searchRef}></input>
-                
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => {
                   searchRef.current.value = "";
                   searchRef.current.focus();
                   searchRef.current.placeholder = "Поиск";
                 }}>
                   <circle cx="12" cy="12" r="12" fill="#F40000"/>
-                  <path fillRule="evenodd" clip-rule="evenodd" d="M7.06992 6.15349C6.87859 5.95438 6.56215 5.94817 6.36314 6.13962C6.16414 6.33106 6.15792 6.64767 6.34926 6.84678L11.2829 11.9807L6.15342 16.9153C5.95441 17.1068 5.9482 17.4234 6.13954 17.6225C6.33088 17.8216 6.64731 17.8278 6.84632 17.6363L11.9758 12.7017L16.9135 17.8399C17.1049 18.0391 17.4213 18.0453 17.6203 17.8538C17.8193 17.6624 17.8255 17.3458 17.6342 17.1467L12.6965 12.0085L17.8336 7.06646C18.0326 6.87502 18.0389 6.55841 17.8475 6.3593C17.6562 6.16019 17.3397 6.15398 17.1407 6.34543L12.0036 11.2874L7.06992 6.15349Z" fill="white"/>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M7.06992 6.15349C6.87859 5.95438 6.56215 5.94817 6.36314 6.13962C6.16414 6.33106 6.15792 6.64767 6.34926 6.84678L11.2829 11.9807L6.15342 16.9153C5.95441 17.1068 5.9482 17.4234 6.13954 17.6225C6.33088 17.8216 6.64731 17.8278 6.84632 17.6363L11.9758 12.7017L16.9135 17.8399C17.1049 18.0391 17.4213 18.0453 17.6203 17.8538C17.8193 17.6624 17.8255 17.3458 17.6342 17.1467L12.6965 12.0085L17.8336 7.06646C18.0326 6.87502 18.0389 6.55841 17.8475 6.3593C17.6562 6.16019 17.3397 6.15398 17.1407 6.34543L12.0036 11.2874L7.06992 6.15349Z" fill="white"/>
                 </svg>
               </div>
             }
@@ -173,6 +171,7 @@ const HeaderRightDesktop = (props) => {
 
 const SearchBox = (props) => {
   const searchRef = React.createRef();
+  const navigate = useNavigate();
 
   const focusSearch = () => {
     searchRef.current.focus();  
@@ -180,17 +179,18 @@ const SearchBox = (props) => {
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
-      //openPage(this.props.changeContent, <SearchPage searchText={e.target.value}/>);
+      navigate("/search", {state: {searchText: e.target.value}});
       props.setSearchMode(true, e.target.value);
       searchRef.current.value = "";
       searchRef.current.blur();
     }
   }
 
-  //<img className="HeaderIcon" src={icon_search} alt="Поиск" onClick={this.focusSearch}/>
   return (
     <div className="HeaderRightContainer">
-      
+      <svg className='HeaderIcon' onClick={() => focusSearch()} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fillRule="evenodd" clipRule="evenodd" d="M20 11C20 6.032 15.968 2 11 2C6.032 2 2 6.032 2 11C2 15.968 6.032 20 11 20C15.968 20 20 15.968 20 11ZM18 11C18 14.867 14.867 18 11 18C7.132 18 4 14.867 4 11C4 7.132 7.132 4 11 4C14.867 4 18 7.132 18 11ZM18.6618 18.8937C18.3395 19.214 18.3379 19.735 18.6583 20.0574L20.315 21.7239C20.6353 22.0462 21.1563 22.0478 21.4786 21.7274L21.7289 21.4787C22.0512 21.1583 22.0527 20.6373 21.7323 20.315L20.0757 18.6484C19.7553 18.3261 19.2343 18.3246 18.912 18.6449L18.6618 18.8937Z" fill="#1F1F1F"/>
+      </svg>
       <input className="Search" type="text" placeholder="Поиск" ref={searchRef} onKeyDown={handleKeyDown}/>
     </div>
   );
