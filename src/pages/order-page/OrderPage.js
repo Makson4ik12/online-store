@@ -31,19 +31,22 @@ const OrderPage = () => {
   const handleInputKey = (e) => {
     switch (e.target.name) {
       case "name":
-        console.log("name");
+        
         break;
 
       case "lastname":
-        console.log("lastname");
+        
         break;
 
       case "phone":
-        console.log("phone");
+        
         break;
 
       case "mail":
-        console.log(navigate);
+        
+        break;
+
+      default:
         break;
     }
   }

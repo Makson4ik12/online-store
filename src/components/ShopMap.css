@@ -6,7 +6,7 @@
     width: 60%;
     margin: 40px;
 
-    shopname {
+    h1 {
         color: var(--main_black);
         font-style: normal;
         font-family: 'Sunday Best';
@@ -14,17 +14,30 @@
         position: absolute;
         top: 10%;
         left: 10%;
+        margin: 0;
     }
 
-    description {
+    h2, h3 {
         color: var(--main_black);
         font-style: normal;
         font-size: 16px;
+        margin: 0;
+        font-weight: 400;
+    }
+
+    h2 {
         position: absolute;
-        top: 55%;
+        top: 80%;
+        left: 5%;
+    }
+
+    h3 {
+        position: absolute;
+        top: 53%;
         left: 77%;
         max-width: 20%;
         text-align: left;
+        
     }
 
     .arrow1, .arrow2, .wave, .hearth-right, .hearth-left, .S {
@@ -59,16 +72,6 @@
     .S {
         top: 0%;
         left: 72%;
-    }
-
-    address {
-        color: var(--main_black);
-        font-style: normal;
-        font-size: 16px;
-        position: absolute;
-        font-weight: 400;
-        top: 80%;
-        left: 5%;
     }
 
     .shopmap-map {

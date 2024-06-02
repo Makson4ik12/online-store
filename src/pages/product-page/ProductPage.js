@@ -13,7 +13,7 @@ import Shopcart from '../shopcart-page/Shopcart.js';
 const ProductPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const product = LocalDB.getDBItems().filter((item) => item.id == location.state.productId)[0];
+  const product = LocalDB.getDBItems().filter((item) => item.id === location.state.productId)[0];
 
   const [currentSize, setCurrentSize] = useState(product.sizes[0]);
   const [viewSizesTable, showSizesTable] = useState(false);
@@ -291,7 +291,7 @@ const ProductImages = (props) => {
     <div className='product-switcher-points'>
       {
         props.photos.map((value) => 
-        value != currentImage
+        value !== currentImage
         ?
         <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M7.5 4.08461C7.5 5.99577 5.93686 7.55204 4 7.55204C2.06314 7.55204 0.5 5.99577 0.5 4.08461C0.5 2.17345 2.06314 0.617188 4 0.617188C5.93686 0.617188 7.5 2.17345 7.5 4.08461Z" stroke="black"/>
@@ -305,7 +305,7 @@ const ProductImages = (props) => {
 
     <div className='product-images-switcher'>
       {
-        props.photos.map((value) => value != currentImage ? <img src={value} onClick={() => changeImage(value)}></img> : <></>)
+        props.photos.map((value) => value !== currentImage ? <img src={value} onClick={() => changeImage(value)}></img> : <></>)
       }
     </div>
     
