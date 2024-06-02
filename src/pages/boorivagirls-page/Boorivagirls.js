@@ -1,5 +1,4 @@
 import './Boorivagirls.css'
-import React from 'react';
 import PageDirectory from '../../components/PageDirectory';
 import BigTitle from '../../components/BigTitle';
 import BottomBar from '../../components/BottomBar';

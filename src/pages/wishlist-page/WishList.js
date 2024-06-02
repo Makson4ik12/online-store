@@ -1,5 +1,4 @@
 import './WishList.css'
-import React from 'react';
 import BigTitle from '../../components/BigTitle.js';
 import PageDirectory from '../../components/PageDirectory.js';
 import TestDB from '../../test-data/products_db.json';

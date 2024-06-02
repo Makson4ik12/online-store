@@ -1,6 +1,6 @@
 import './ProductCard.css'
-import { React, useEffect, useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LocalDB from '../test-data/LocalDB'
 
 const ProductCard = (props) => {

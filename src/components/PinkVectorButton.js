@@ -1,9 +1,6 @@
-import React from 'react';
 import './PinkVector.css'
 
 const PinkVectorButton = (props) => {
-  const productRef = React.createRef();
-
   const clickButton = (click) => {
     if (click) click();
   }
