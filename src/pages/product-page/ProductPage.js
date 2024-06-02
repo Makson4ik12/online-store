@@ -136,7 +136,7 @@ const ProductPage = () => {
   );
 }
 
-function ProductPageInfo(props) {
+const ProductPageInfo = (props) => {
   return (
     <div className='product-page-info-container'>
       <div className='product-page-info-container-left'>
@@ -328,7 +328,7 @@ const ProductImages = (props) => {
   );
 }
 
-function SizesTable() {
+const SizesTable = () => {
   return (
     <div className='sizes-table-container'>
       <h1>КАК ВЫБРАТЬ РАЗМЕР?</h1>
@@ -433,7 +433,7 @@ function SizesTable() {
   );
 }
 
-function MayLikeProducts(props) {
+const MayLikeProducts = () => {
   const products = LocalDB.getDBItems().slice(0, 4);
 
   return (
