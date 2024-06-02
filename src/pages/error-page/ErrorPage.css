@@ -1,0 +1,23 @@
+.errorpage-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 0;
+    margin: 0;
+
+    text {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 2vh;
+        color: black;
+    }
+
+    .running-line-container {
+        margin-top: 5px;
+    }
+}

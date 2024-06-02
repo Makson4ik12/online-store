@@ -1,0 +1,95 @@
+.boorivagirls-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.boorivagirls-container-body {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.boorivagirls-body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.boorivagirls-body-left {
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+
+    .boorivagirls-body-left-header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    text {
+        text-align: left;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 2vh;
+        color: var(--main_black);
+    }
+
+    .boorivagirls-body-left-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        
+        .boorivagirls-body-left-lefthalf, .boorivagirls-body-left-righthalf {
+            gap: 10px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            text span {
+                -webkit-user-select: text;
+                user-select: text;
+            }
+        }
+
+        .boorivagirls-body-left-lefthalf {
+            margin-top: 10vw;
+        }
+
+        .pink-vector-button-container {
+            margin-top: 10px;
+            
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, 0%);
+            }
+
+            p {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                font-size: 22px;
+                transform: translate(-50%, -15%);
+            }
+        }
+    }
+}
+
+.boorivagirls-body-right {
+    width: 33%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}

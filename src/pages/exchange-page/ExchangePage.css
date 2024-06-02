@@ -1,0 +1,56 @@
+.exchange-page-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .page-directory-container {
+        width: 80%;
+    }
+
+    .exchange-container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 20px;
+        gap: 5vh;
+
+        .exchange-container-line {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 3vw;
+
+            .exchange-container-item {
+                width: 50%;
+                display: flex;
+                flex-direction: row;
+                gap: 3vw;
+                align-items: center;
+
+                p {
+                    text-align: left;
+                    font-family: 'Montserrat';
+                    font-weight: 400;
+                    font-size: 0.95vw;
+                    margin: 0;
+                    width: 80%;
+                }
+
+                .exchange-svg-container {
+                    width: 20%;
+                    display: inline-block;
+                    overflow: hidden;
+                    color: aqua;
+                    margin: 0;
+
+                    svg {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

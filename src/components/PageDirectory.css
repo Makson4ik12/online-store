@@ -1,0 +1,31 @@
+.page-directory-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    p, h1 {
+        font-size: 2vh;
+        font-weight: 400;
+        font-family: 'Montserrat';
+    }
+
+    p {
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        color: var(--main_black);
+
+        &:hover {
+            transform: scale(1.1, 1.1);
+        }
+    }
+
+    h1 {
+        color: var(--accent1);
+    }
+
+    svg {
+        width: 1vw;
+    }
+}

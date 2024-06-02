@@ -1,0 +1,27 @@
+.pink-vector-text-container, .pink-vector-button-container {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 22px;
+        transform: translate(-50%, -110%);
+        color: var(--white);
+        font-style: normal;
+        font-family: 'Sunday Best';
+    }
+}
+
+.pink-vector-button-container:hover {
+    transform: scale(1.1, 1.1);
+}

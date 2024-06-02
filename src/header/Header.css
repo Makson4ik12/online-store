@@ -1,0 +1,219 @@
+.Header, .HeaderMobile {
+    max-height: 15%;
+    display: flex;
+    align-items: center;
+  }
+
+.Header {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.HeaderMobile {
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: solid 1px var(--accent1);
+
+    h1 {
+        margin-left: 10px;
+    }
+
+    p {
+        margin-right: 10px;
+    }
+
+    .header-logo {
+        width: 20vw;
+    }
+}
+
+.Header h1 {
+    font-size: var(--logo_size);
+    flex-basis: 100%;
+}
+  
+.HeaderTopMenuContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--accent1);
+}
+
+.header-logo {
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:hover {
+        transform: scale(1.1, 1.1);
+    }
+}
+
+.HeaderTopMenu {
+    height: 12vh;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-logo {
+        width: 8vw;
+    }
+}
+
+.HeaderBottomMenu {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+
+    .header-big-search-container {
+        animation: 1s ease-out 0s 1 slideFromTop;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border: 2px solid var(--accent1);
+        width: 30%;
+        border-radius: 7px;
+        padding: 10px;
+
+        .header-big-search {
+            width: 80%;
+            border: none;
+            font-size: 20px;
+            font-size: 2vh;
+            font-family: 'Montserrat';
+            font-weight: 400;
+    
+            &:focus { 
+                outline: none;
+            }   
+        }
+
+        svg {
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            width: 2vw;
+
+            &:hover {
+                transform: scale(1.1, 1.1);
+            }
+        }
+    }
+}
+
+@keyframes slideFromTop {
+    0% {
+        transform: scale(0, 0)
+    }
+    100% {
+        transform: scale(1, 1)
+    }
+}
+
+.HeaderMenuButton {
+    background-color: var(--white);
+    border: 0px;
+    font-size: var(--menu_button_size);
+
+    &:hover {
+        color: var(--accent1);
+        font-style: italic;
+    }
+}
+
+.HeaderBottomMenuOpened {
+    width: 80%;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #909090;
+}
+
+.HeaderMenuButtonSelected {
+    background-color: var(--white);
+    border: 0px;
+    font-size: var(--menu_button_size);
+    color: var(--accent1);
+    font-style: italic;
+}
+
+.HeaderLeftContainer, .HeaderRightContainer {
+    
+    display: flex;
+    align-items: center;
+
+    p, a {
+        font-style: italic;
+        color: var(--accent1);
+        font-size: var(--menu_text_size);
+    }
+
+    a:link, a:visited, a:hover, a:active {
+        text-decoration: none;
+    }
+}
+
+.HeaderRightContainer {
+    justify-content: flex-end;
+}
+
+.HeaderLeftContainer {
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    justify-content: flex-start;
+
+    .HeaderLeftContainer:hover {
+        transform: scale(1.1, 1.1);
+    }
+}
+
+.Search {
+    border: 0px;
+    font-size: var(--menu_button_size);
+    font-weight: bold;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    padding: 10px;
+
+    &::placeholder {
+        color: var(main_black);
+        opacity: 1;
+    }
+
+    &:focus, &:hover {
+        outline: none;
+        border: 1px solid var(--accent1);
+        border-radius: 5px;
+        outline-color: var(--accent1);
+    }       
+}
+
+.HeaderIcon {
+    margin: 10px;
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+        transform: scale(1.1, 1.1);
+    }
+}
+
+.shopcart-modal {
+    -webkit-user-select: none;
+    user-select: none;
+    margin: 0;
+    width: 100%;
+    background-color: var(white);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    height: 100%;
+}

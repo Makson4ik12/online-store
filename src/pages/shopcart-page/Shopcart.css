@@ -1,0 +1,124 @@
+.shopcart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat';
+    margin: 0;
+    width: 100%;
+    gap: 20px;
+    background-color: white;
+
+    h1 {
+        font-size: 1.5vw;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.5vw;
+        font-weight: 400;
+        width: 100%;
+    }
+
+    .shopcart-items-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-y: scroll;
+        gap: 10px;
+        scrollbar-color: var(--accent1) var(--accent1);
+        -webkit-scrollbar-color: var(--accent1) var(--accent1);
+    }
+
+    .shopcart-text-component {
+        width: 90%;
+        text-align: left;
+        font-size: 1.2vh;
+
+        .shopcart-text-component-text {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            h2 {
+                color: var(--accent1);
+                margin: 0;
+                margin-top: 10px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .shopcart-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        height: 20vh;
+        width: 100%;
+        gap: 20px;
+        box-sizing: border-box;
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        img {
+            width: 6vw;
+            object-fit: contain;
+        }
+
+        .shopcart-item-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            gap: 10px;
+            justify-content: center;
+
+            h1 {
+                font-size: 1vw;
+                width: 100%;
+                margin: 0;
+            }
+
+            p {
+                font-size: 0.8vw;
+                width: 100%;
+                margin: 0;
+            }
+
+            h2 {
+                text-align: left;
+                font-size: 1vw;
+                color: var(--accent1);
+                width: 100%;
+                margin: 0;
+                padding-top: 2vh;
+            }
+        }
+    }
+
+    .shopcart-delete-button{
+        position: relative;
+        width: 10%;
+
+        svg {
+            position: absolute;
+            top: 1.5em;
+            left: 0;
+
+            &:hover {
+                transform: scale(1.2, 1.2);
+            }
+        }
+    }
+}
+
+.shopcart-empty-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    font-family: 'Montserrat';
+    gap: 20px;
+    background-color: white;
+    text-align: center;
+}

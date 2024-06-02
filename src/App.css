@@ -1,38 +1,26 @@
+:root {
+  --white: white;
+  --gray: #B0B0B0;
+  --secondary: #FFE6EF;
+  --main_black: #1F1F1F;
+  --accent2: #F40000;
+  --accent1: #FDA3C4;
+  --font: 'Montserrat';
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  font-family: var(--font);
+  color: var(--main_black);
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+  font-family: 'Sunday Best';
+  src: local('MyFont'), url(./fonts/sundaybestrusbyalince.otf) format('truetype');
 }

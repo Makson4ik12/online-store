@@ -1,0 +1,179 @@
+.order-page-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+
+    .order-page-content {
+        display: flex;
+        width: 80%;
+        flex-direction: row;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        gap:6vh;
+
+        .order-page-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 60%;
+            gap: 50px;
+
+            .order-page-inputs-block {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+
+                .order-page-title{
+                    position: relative;
+                    width: 40%;
+                    white-space: pre-wrap;
+                    text-align: left;
+    
+                    h1 {
+                        position: absolute;
+                        top: 0;
+                        left: 1.3vw;
+                        font-family: 'Sunday Best';
+                        font-weight: 400;
+                        font-size: 5.7vh;
+                        margin: 0;
+                        color: var(--accent1);
+                    }
+    
+                    p {
+                        position: absolute;
+                        top: 7vh;
+                        left: 0;
+                        font-family: 'Montserrat';
+                        font-weight: 600;
+                        font-size: 2.8vh;
+                        margin: 0;
+                    }
+    
+                    svg {
+                        position: absolute;
+                        top: 5vh;
+                        left: 3.5vw;
+                        margin: 0;
+                        width: 8vh;
+                    }
+                }
+    
+                .order-page-inputs {
+                    display: flex;
+                    flex-direction: column;
+                    width: 60%;
+                    gap: 10px;
+
+                    p, input, textarea {
+                        font-family: 'Montserrat';
+                        font-weight: 400;
+                        font-size: 1.8vh;
+                        text-align: left;
+                    }
+
+                    p {
+                        margin: 0;
+                        margin-left: calc(1vw + 20px);
+                    }
+
+                    input, textarea {
+                        border: 2px solid var(--main_black);
+                        border-radius: 4px;
+                        padding: 15px;
+                        padding-left: 25px;
+                        outline: none;
+
+                        &:hover {
+                            outline: none;
+                        }
+
+                        &::placeholder {
+                            color: var(--accent1);
+                            opacity: 1;
+                        }
+
+                        &:invalid {
+                            color: var(--accent2);
+                        }
+                    }
+
+                    textarea {
+                        resize: none;
+                    }
+
+                    .order-page-radio-container {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        gap: 10px;
+
+                        label {
+                            text-align: left;
+                            font-family: 'Montserrat';
+                            font-weight: 400;
+                            font-size: 1.8vh;
+                        }
+
+                        input[type='radio'] {
+                            accent-color: var(--accent1);
+                            outline: none;
+
+                            &:hover {
+                                transform: scale(1.1, 1.1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .pink-vector-button-container {
+                margin-left: 50%;  
+            }
+        }
+
+        .shopcart-container {
+            width: 40%;
+            height: 60vh;
+            border-bottom: 1px solid var(--accent1);
+
+            h1 {
+                margin: 0 0 10px 0;
+            }
+        }
+    }
+}
+
+.accepted-order-container {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-user-select: none;
+    user-select: none;
+    margin: 50px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 2vh;
+    gap: 10px;
+
+    order-num {
+        font-size: 3vh;
+    }
+
+    .big-title-container {
+        .big-title {
+            svg {
+                top: 13vh;
+            }
+
+            p {
+                bottom: 1.2cqw;
+            }
+        }
+    }
+}

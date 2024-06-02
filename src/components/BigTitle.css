@@ -1,0 +1,36 @@
+.big-title-container {
+    width: 80%;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.big-title {
+    text-align: left;
+    position: relative;
+    display: inline-block;
+
+    h1 {
+        font-family: 'Sunday Best';
+        font-size: 54px;
+        font-weight: 400;
+        color: var(--accent1);
+    }
+
+    p {
+        color: var(--main_black);
+        font-size: 25px;
+        position: absolute;
+        bottom: 0.55cqw;
+        font-family: 'Montserrat';
+        font-weight: 600;
+    }
+
+    svg {
+        position: absolute;
+        bottom: 25%;
+        right: 20px;
+        width: 20%;
+    }
+}

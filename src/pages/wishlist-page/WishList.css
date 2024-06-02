@@ -1,0 +1,21 @@
+.wish-list-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wish-list-container {
+    width: 80%;
+
+    .wish-list-products-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+}

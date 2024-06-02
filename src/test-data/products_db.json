@@ -1,0 +1,93 @@
+{"products": [
+    {
+        "id": "1",
+        "image": "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/8be960a471da59d1258687573a27ee41960e289f",
+        "title": "Свитшот вставка клетка",
+        "price": "1 099 ₴",
+
+        "description": "Over size бомбер цвета хаки на резинке с объемными рукавами. Фурнитура выполнена в серебряном цвете. Акцентными деталями выступают объемные нашитые карманы и капюшон, который отстёгивается",
+        "sizes" : [
+            {"name": "XS - S", "sizes": ["83", "66", "93"] },
+            {"name": "S - M", "sizes": ["85", "68", "95"] },
+            {"name": "M - L", "sizes": ["87", "70", "97"] },
+            {"name": "L - XL", "sizes": ["90", "72", "100"] }
+        ],
+        "photos": [
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/8be960a471da59d1258687573a27ee41960e289f",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/92e8f7c780702998ce606d3bea33b83e09abebdc",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/2a2f6799f6bbbc4b4cf43bcf2d5c5ca0408b3074",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/42b72bbd90d98cc2b819bd4ea4ed37eccc26208f",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0c448f6ac90505242a5473e96a5b05e50088a27c"
+        ],
+        "inst_photo" : "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/b4bd8397e5ed6308945c01119d5505a45254a252",
+        "composition": ["50% вискоза", "50% полиэстер"]
+    },
+    {
+        "id": "2",
+        "image": "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/fb24a91a992479445d3ff633bc6b81a7d13b0d78",
+        "title": "Платье прозрачное в цветочек черное",
+        "price": "1 299 ₴",
+
+        "description": "Over size бомбер цвета хаки на резинке с объемными рукавами. Фурнитура выполнена в серебряном цвете. Акцентными деталями выступают объемные нашитые карманы и капюшон, который отстёгивается",
+        "sizes" : [
+            {"name": "XS - S", "sizes": ["83", "66", "93"] },
+            {"name": "S - M", "sizes": ["85", "68", "95"] },
+            {"name": "M - L", "sizes": ["87", "70", "97"] },
+            {"name": "L - XL", "sizes": ["90", "72", "100"] }
+        ],
+        "photos": [
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/fb24a91a992479445d3ff633bc6b81a7d13b0d78",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/92e8f7c780702998ce606d3bea33b83e09abebdc",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/2a2f6799f6bbbc4b4cf43bcf2d5c5ca0408b3074",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/42b72bbd90d98cc2b819bd4ea4ed37eccc26208f",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0c448f6ac90505242a5473e96a5b05e50088a27c"
+        ],
+        "inst_photo" : "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/b4bd8397e5ed6308945c01119d5505a45254a252",
+        "composition": ["50% вискоза", "50% полиэстер"]
+    },
+    {
+        "id": "3",
+        "image": "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/4e808eaf31c1f3d38a5341f6e8a12f58a88041d3",
+        "title": "Бомбер Gone Crazy хаки",
+        "price": "2 499 ₴",
+        "description": "Over size бомбер цвета хаки на резинке с объемными рукавами. Фурнитура выполнена в серебряном цвете. Акцентными деталями выступают объемные нашитые карманы и капюшон, который отстёгивается",
+        "sizes" : [
+            {"name": "XS - S", "sizes": ["83", "66", "93"] },
+            {"name": "S - M", "sizes": ["85", "68", "95"] },
+            {"name": "M - L", "sizes": ["87", "70", "97"] },
+            {"name": "L - XL", "sizes": ["90", "72", "100"] }
+        ],
+        "photos": [
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/4e808eaf31c1f3d38a5341f6e8a12f58a88041d3",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/92e8f7c780702998ce606d3bea33b83e09abebdc",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/2a2f6799f6bbbc4b4cf43bcf2d5c5ca0408b3074",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/42b72bbd90d98cc2b819bd4ea4ed37eccc26208f",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0c448f6ac90505242a5473e96a5b05e50088a27c"
+        ],
+        "inst_photo" : "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/b4bd8397e5ed6308945c01119d5505a45254a252",
+        "composition": ["50% вискоза", "50% полиэстер"]
+    },
+    {
+        "id": "4",
+        "image": "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/d058715c041b82b0e6b8784da6d4ba06f051b482",
+        "title": "Платье-футболка рыбы в аквариуме",
+        "price": "899 ₴",
+
+        "description": "Over size бомбер цвета хаки на резинке с объемными рукавами. Фурнитура выполнена в серебряном цвете. Акцентными деталями выступают объемные нашитые карманы и капюшон, который отстёгивается",
+        "sizes" : [
+            {"name": "XS - S", "sizes": ["83", "66", "93"] },
+            {"name": "S - M", "sizes": ["85", "68", "95"] },
+            {"name": "M - L", "sizes": ["87", "70", "97"] },
+            {"name": "L - XL", "sizes": ["90", "72", "100"] }
+        ],
+        "photos": [
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/d058715c041b82b0e6b8784da6d4ba06f051b482",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/92e8f7c780702998ce606d3bea33b83e09abebdc",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/2a2f6799f6bbbc4b4cf43bcf2d5c5ca0408b3074",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/42b72bbd90d98cc2b819bd4ea4ed37eccc26208f",
+            "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0c448f6ac90505242a5473e96a5b05e50088a27c"
+        ],
+        "inst_photo" : "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/b4bd8397e5ed6308945c01119d5505a45254a252",
+        "composition": ["50% вискоза", "50% полиэстер"]
+    }
+]}
