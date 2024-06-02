@@ -1,8 +1,12 @@
 import TestDB from './products_db.json';
 
 class LocalDB {
-    static deleteItem(tableName, item, isNonSet) {
-        const table = JSON.parse(localStorage.getItem(tableName)) || [];
+    static deleteItem(
+        tableName: string, 
+        item: string, 
+        isNonSet: boolean
+    ){
+        const table = JSON.parse(localStorage.getItem(tableName) || "") || [];
         let values;
 
         if (isNonSet) {
@@ -16,8 +20,12 @@ class LocalDB {
         localStorage.setItem(tableName, JSON.stringify(Array.from(values)));
     }
 
-    static addItem(tableName, item, isNonSet) {
-        const table = JSON.parse(localStorage.getItem(tableName)) || [];
+    static addItem(
+        tableName: string,
+        item: string,
+        isNonSet: boolean
+    ){
+        const table = JSON.parse(localStorage.getItem(tableName) || "") || [];
         let values;
 
         if(isNonSet) {
@@ -31,12 +39,12 @@ class LocalDB {
         localStorage.setItem(tableName, JSON.stringify(Array.from(values)));
     }
 
-    static freeLSTable(tableName) {
+    static freeLSTable(tableName: string) {
         localStorage.setItem(tableName, "[]");
     }
 
-    static getLSItems(tableName, isNonSet) {
-        const table = JSON.parse(localStorage.getItem(tableName)) || [];
+    static getLSItems(tableName: string, isNonSet: boolean) {
+        const table = JSON.parse(localStorage.getItem(tableName) || "") || [];
 
         if(isNonSet) 
             return Array.from(table)
@@ -48,7 +56,7 @@ class LocalDB {
         return TestDB.products;
     }
 
-    static find(find_string) {
+    static find(find_string: string) {
         return TestDB.products.filter((item) => {
             return find_string.split(" ").every(word => new RegExp('.*' + word + '.*', 'ig').test(item.title));
         });

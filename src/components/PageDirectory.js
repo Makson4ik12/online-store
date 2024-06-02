@@ -1,10 +1,14 @@
 import './PageDirectory.css'
 import {Link} from 'react-router-dom';
 
-const PageDirectory = (props) => {
+const PageDirectory = ({
+  pages = {}, 
+  currentPage = "Current page"
+}) => {
+  
   return(
     <div className="page-directory-container">
-      {props.pages.map((item) => {
+      {pages.map((item) => {
         return(
           <>
             <Link to={item.page}>{item.title}</Link>
@@ -15,7 +19,7 @@ const PageDirectory = (props) => {
         )
       })}
 
-      <h1>{props.currentPage}</h1>
+      <h1>{currentPage}</h1>
     </div>
   );
 }

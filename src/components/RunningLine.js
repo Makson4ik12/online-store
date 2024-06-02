@@ -1,9 +1,9 @@
 import './RunningLine.css'
 
-const RunningLine = (props) => {
+const RunningLine = ({text = "Бегущая строка"}) => {
   return (
     <div className="running-line-container">
-      <p>{props.text}&emsp;&emsp;{props.text}&emsp;&emsp;{props.text}&emsp;&emsp;{props.text}&emsp;&emsp;{props.text}&emsp;&emsp;{props.text}&emsp;&emsp;{props.text}&emsp;&emsp;{props.text}&emsp;&emsp;</p>
+      <p>{text}&emsp;&emsp;{text}&emsp;&emsp;{text}&emsp;&emsp;{text}&emsp;&emsp;{text}&emsp;&emsp;{text}&emsp;&emsp;{text}&emsp;&emsp;{text}&emsp;&emsp;</p>
     </div>
   );
 }

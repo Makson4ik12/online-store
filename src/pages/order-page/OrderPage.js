@@ -6,7 +6,7 @@ import BottomBar from '../../components/BottomBar';
 import PinkVectorButton from '../../components/PinkVectorButton';
 import Shopcart from '../shopcart-page/Shopcart';
 import BigTitle from '../../components/BigTitle';
-import LocalDB from '../../test-data/LocalDB';
+import LocalDB from '../../test-data/LocalDB.ts';
 
 const OrderPage = () => {
   const navigate = useNavigate();
@@ -121,7 +121,7 @@ const OrderPage = () => {
           </div> 
           <PinkVectorButton text="Подтвердить заказ" width="20vw" textSize="0.7vw" click={() => onAcceptOrder(true)}/>          
         </div>
-        <Shopcart isComponent="true"/>
+        <Shopcart isComponent={true}/>
       </div>
       <BottomBar/>
       <Modal open={acceptedOrder} onClose={() => onAcceptOrder(false)} center>

@@ -1,6 +1,6 @@
 import './ShopInstagram.css'
 
-const ShopInstagram = (props) => {
+const ShopInstagram = ({withHints = false}) => {
   const hints = [
     {img: 
       <svg width="81" height="98" viewBox="0 0 81 98" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +80,7 @@ const ShopInstagram = (props) => {
 
   return (
     <div className="shop-instagram-container">
-      {props?.withHints == true
+      {withHints == true
       ?
       <div className="hints-container">
         {hints.map((item) => 

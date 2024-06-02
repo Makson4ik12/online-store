@@ -2,9 +2,9 @@ import './Shopcart.css'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import PinkVectorButton from '../../components/PinkVectorButton';
-import LocalDB from '../../test-data/LocalDB';
+import LocalDB from '../../test-data/LocalDB.ts';
 
-const Shopcart = (props) => {
+const Shopcart = ({isComponent = false, closeHandler = () => {}}) => {
   const navigate = useNavigate();
 
   const getShopcartItems = () => {
@@ -31,13 +31,13 @@ const Shopcart = (props) => {
   if(shopcartItems.length > 0) {
     return (
       <div className='shopcart-container'>
-        <h1>{props?.isComponent === "true" ? "Товары в Корзине:" : "КОРЗИНА"}</h1>
+        <h1>{isComponent == true ? "Товары в Корзине:" : "КОРЗИНА"}</h1>
 
         <div className='shopcart-items-container' style={{height: window.innerHeight * 3/5}}>
           { shopcartItems.map((item) => <Shopcartitem product={item} removeHandler={removeItem}/>) }
         </div>
         
-        {props?.isComponent === "true" 
+        {isComponent == true 
         ? 
           <div className='shopcart-text-component'>
             <div className='shopcart-text-component-text'>
@@ -55,7 +55,7 @@ const Shopcart = (props) => {
         :
         <>
           <p>Сумма заказа: . . . . . . <b>{shopcartItems.reduce((total, item) => total += Number(item.price.replace(/ /g,'').slice(0, -1)), 0)} ₴</b></p>
-          <PinkVectorButton text="Оформить заказ" width="20vw" textSize="1.7vh" click={() => {props.closeHandler(false); navigate("/order");}} />
+          <PinkVectorButton text="Оформить заказ" width="20vw" textSize="1.7vh" click={() => {closeHandler(); navigate("/order");}} />
         </>
         }
       </div>
@@ -81,7 +81,7 @@ const Shopcart = (props) => {
 
         <p>Твоя корзина пуста, но это никогда<br></br>не поздно исправить:)</p>
         
-        <PinkVectorButton text="ЗА ПОКУПКАМИ" width="20vw" textSize="1.7vh" click={props.closeHandler}/>
+        <PinkVectorButton text="ЗА ПОКУПКАМИ" width="20vw" textSize="1.7vh" click={closeHandler}/>
       </div>
     );
   }
