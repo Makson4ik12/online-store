@@ -15,6 +15,7 @@ import WishList from './pages/wishlist-page/WishList';
 import ShopCart from './pages/shopcart-page/Shopcart';
 import OrderPage from './pages/order-page/OrderPage';
 import ProductPage from './pages/product-page/ProductPage';
+import SearchPage from './pages/search-page/SearchPage';
 
 const App = () => {
   return (
@@ -33,7 +34,8 @@ const App = () => {
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/shopcart" element={<ShopCart />} />
         <Route path="/order" element={<OrderPage />} />
-        <Route path="/product-page" element={<ProductPage />} />
+        <Route path="/product" element={<ProductPage />} />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
     </div>
   );
