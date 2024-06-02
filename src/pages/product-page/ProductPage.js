@@ -1,5 +1,5 @@
 import './ProductPage.css'
-import LocalDB from '../../test-data/LocalDB';
+import LocalDB from '../../test-data/LocalDB.ts';
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Modal } from 'react-responsive-modal';
@@ -46,7 +46,7 @@ const ProductPage = () => {
 
           <div className='product-buttons-container'>
             <PinkVectorButton text="В КОРЗИНУ" width="17vw" textSize="1.7vh" click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); setViewShopcart(true);}}/>
-            <PinkVectorButton text="БЫСТРЫЙ ЗАКАЗ" width="17vw" textSize="1.7vh" transparent="1" click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); navigate("/order");}}/>
+            <PinkVectorButton text="БЫСТРЫЙ ЗАКАЗ" width="17vw" textSize="1.7vh" isTransparent={true} click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); navigate("/order");}}/>
           </div>
 
           <p>{product.description}</p>

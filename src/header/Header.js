@@ -2,7 +2,7 @@ import './Header.css'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Modal } from 'react-responsive-modal';
-import LocalDB from '../test-data/LocalDB'
+import LocalDB from '../test-data/LocalDB.ts'
 import EmptyWishList from '../pages/wishlist-page/EmptyWishList'
 import Shopcart from '../pages/shopcart-page/Shopcart';
 

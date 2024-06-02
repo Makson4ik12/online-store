@@ -2,7 +2,7 @@ import BigTitle from "../../components/BigTitle";
 import PinkVectorButton from "../../components/PinkVectorButton";
 import './EmptyWishList.css'
 
-const EmptyWishList = (props) => {
+const EmptyWishList = ({onClose = () => {}}) => {
   return (
     <div className="empty-wishlist-container">
       <BigTitle title="СПИСОК ЖЕЛАНИЙ" description="ТВОЙ ТАЙНЫЙ СПИСОК ЖЕЛАНИЙ" rightWaveOffset="1%" titleFontSize="45px" descrFontSize="20px"/>
@@ -44,7 +44,7 @@ const EmptyWishList = (props) => {
 
       <text>Похоже тебе еще ничего не запало в сердечко....</text>
 
-      <PinkVectorButton text="НА ГЛАВНУЮ" width='600' height="60px" click={props.onClose}/>
+      <PinkVectorButton text="НА ГЛАВНУЮ" width='600' height="60px" click={onClose}/>
     </div>
   );
 }

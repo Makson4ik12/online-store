@@ -1,9 +1,20 @@
 import './ProductCard.css'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LocalDB from '../test-data/LocalDB'
+import LocalDB from '../test-data/LocalDB.ts'
 
-const ProductCard = (props) => {
+const ProductCard = ({
+  id = "0",
+  img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVLDP5s2j9u1x86fOb7kNKXanJeMn8zZ30ZQ&s",
+  descr = "Описание",
+  price = "Цена",
+  width = "25%",
+  height = "60vh",
+  nameFont = "1vw",
+  priceFont = "1.5vw",
+  margin = "0"
+}) => {
+  
   const [likeButton, setLikeButton] = useState(null);
   const favouriteProductsList = LocalDB.getLSItems('favouriteProductsList')
   const navigate = useNavigate();
@@ -13,7 +24,7 @@ const ProductCard = (props) => {
       onClick={e => { 
         e.stopPropagation();
         setLikeButton(unlikedButton); 
-        LocalDB.deleteItem('favouriteProductsList', props.id); 
+        LocalDB.deleteItem('favouriteProductsList', id); 
       }} 
       width="26" 
       height="24" 
@@ -30,7 +41,7 @@ const ProductCard = (props) => {
       onClick={e => { 
         e.stopPropagation();
         setLikeButton(likedButton); 
-        LocalDB.addItem('favouriteProductsList', props.id);
+        LocalDB.addItem('favouriteProductsList', id);
       }}
       width="26"
       height="24"
@@ -42,22 +53,22 @@ const ProductCard = (props) => {
     </svg>;
 
   useEffect(() => {
-    favouriteProductsList.has(props.id) ? setLikeButton(likedButton) : setLikeButton(unlikedButton);
+    favouriteProductsList.has(id) ? setLikeButton(likedButton) : setLikeButton(unlikedButton);
   }, []);
 
   return (
     <div 
       className="product-card-container" 
-      style={{width: props.width, height: props.height, margin: props.margin || 0}}
-      onClick={() => navigate("/product-page", {state: {productId: props.id}})}
+      style={{width: width, height: height, margin: margin}}
+      onClick={() => navigate("/product-page", {state: {productId: id}})}
     >
       <div className="product-card-top-container">
-        <img src={props.img}/>
+        <img src={img}/>
         {likeButton}
       </div>
       <div className="product-card-bottom-container">
-        <h3 style={{fontSize: props.nameFont}}>{props.descr}</h3>
-        <h2 style={{fontSize: props.priceFont}}>{props.price}</h2>
+        <h3 style={{fontSize: nameFont}}>{descr}</h3>
+        <h2 style={{fontSize: priceFont}}>{price}</h2>
       </div>
     </div>
   )

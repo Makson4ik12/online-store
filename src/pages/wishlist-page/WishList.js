@@ -5,7 +5,7 @@ import TestDB from '../../test-data/products_db.json';
 import ProductCard from '../../components/ProductCard.js';
 import ShopInstagram from '../../components/ShopInstagram.js';
 import BottomBar from '../../components/BottomBar.js';
-import LocalDB from '../../test-data/LocalDB.js';
+import LocalDB from '../../test-data/LocalDB.ts';
 
 const WishList = () => {
   const favouriteProductsList = LocalDB.getLSItems('favouriteProductsList');
