@@ -16,15 +16,13 @@ const ProductPage = () => {
   const product = LocalDB.getDBItems().filter((item) => item.id === location.state.productId)[0];
 
   const [currentSize, setCurrentSize] = useState(product.sizes[0]);
-  const [viewSizesTable, showSizesTable] = useState(false);
-  const [viewShopcart, showShopcart] = useState(false);
+  const [viewSizesTable, setViewSizesTable] = useState(false);
+  const [viewShopcart, setViewShopcart] = useState(false);
 
   return (
     <div className='product-page-container'>
       <div className='product-container'>
-        
         <ProductImages photos={product.photos} favouriteProductsList={LocalDB.getLSItems('favouriteProductsList')} id={product.id}/>
-
         <div className='product-right'>
           <h1>{product.title}</h1>
           <h2>{product.price}</h2>
@@ -47,7 +45,7 @@ const ProductPage = () => {
           </div>
 
           <div className='product-buttons-container'>
-            <PinkVectorButton text="В КОРЗИНУ" width="17vw" textSize="1.7vh" click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); showShopcart(true);}}/>
+            <PinkVectorButton text="В КОРЗИНУ" width="17vw" textSize="1.7vh" click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); setViewShopcart(true);}}/>
             <PinkVectorButton text="БЫСТРЫЙ ЗАКАЗ" width="17vw" textSize="1.7vh" transparent="1" click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); navigate("/order");}}/>
           </div>
 
@@ -96,41 +94,35 @@ const ProductPage = () => {
           </div>
           
           <div style={{width: "100%", justifyContent: "center", display: "flex", marginTop: "10px"}}>
-            <PinkVectorButton click={() => showSizesTable(true)} text="ТАБЛИЦА РАЗМЕРОВ" width="20vw" textSize="1.7vh" transparent="1"/>
+            <PinkVectorButton click={() => setViewSizesTable(true)} text="ТАБЛИЦА РАЗМЕРОВ" width="20vw" textSize="1.7vh" transparent="1"/>
           </div>
         </div>
       </div>
 
       <ProductPageInfo inst_photo={product.inst_photo}/>
-
       <BigTitle title="МОГУТ ПОНРАВИТЬСЯ" description="ТЕБЕ МОГУТ ПОНРАВИТЬСЯ" />
-
       <MayLikeProducts />
-
       <ShopInstagram />
-
       <BottomBar />
 
-      <Modal open={viewSizesTable} onClose={() => showSizesTable(false)} center closeIcon={
+      <Modal open={viewSizesTable} onClose={() => setViewSizesTable(false)} center closeIcon={
         <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="23" cy="23" r="23" fill="white"/>
           <path d="M33.1858 12.792L12.3906 32.7865" stroke="#FDA3C4" stroke-width="2" stroke-linecap="round"/>
           <path d="M12.7908 12.3921L32.7853 33.1873" stroke="#FDA3C4" stroke-width="2" stroke-linecap="round"/>
         </svg>
         } classNames={{modal: 'sizes-table-modal'}}>
-
         <SizesTable />
       </Modal>
 
-      <Modal open={viewShopcart} onClose={() => showShopcart(false)} classNames={{modal: 'shopcart-modal'}} closeIcon={
+      <Modal open={viewShopcart} onClose={() => setViewShopcart(false)} classNames={{modal: 'shopcart-modal'}} closeIcon={
         <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="23" cy="23" r="22" fill="white" stroke="black" stroke-width="2"/>
           <path d="M33.1858 12.792L12.3906 32.7865" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>
           <path d="M12.7908 12.3921L32.7853 33.1873" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>
         </svg>
         }>
-
-        <Shopcart closeHandler={() => showShopcart(false)} />
+        <Shopcart closeHandler={() => setViewShopcart(false)} />
       </Modal>
     </div>
   );
@@ -253,8 +245,8 @@ const ProductPageInfo = (props) => {
 }
 
 const ProductImages = (props) => {
-  const [currentImage, changeImage] = useState(props.photos[0]);
-  const [fullScreenImage, changeFullScreenImage] = useState(false);
+  const [currentImage, setCurrentImage] = useState(props.photos[0]);
+  const [fullScreenImage, setFullScreenImage] = useState(false);
   const [likeButton, setLikeButton] = useState(null);
 
   const likedButton = 
@@ -305,16 +297,16 @@ const ProductImages = (props) => {
 
     <div className='product-images-switcher'>
       {
-        props.photos.map((value) => value !== currentImage ? <img src={value} onClick={() => changeImage(value)}></img> : <></>)
+        props.photos.map((value) => value !== currentImage ? <img src={value} onClick={() => setCurrentImage(value)}></img> : <></>)
       }
     </div>
     
     <div className='product-main-img'>
-      <img src={currentImage} onClick={() => changeFullScreenImage(true)}></img>
+      <img src={currentImage} onClick={() => setFullScreenImage(true)}></img>
       {likeButton}
     </div>
 
-    <Modal open={fullScreenImage} onClose={() => changeFullScreenImage(false)} center closeIcon={
+    <Modal open={fullScreenImage} onClose={() => setFullScreenImage(false)} center closeIcon={
         <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="23" cy="23" r="22" fill="white" stroke="black" stroke-width="2"/>
           <path d="M33.1858 12.792L12.3906 32.7865" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>

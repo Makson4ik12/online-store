@@ -1,6 +1,6 @@
 import './PinkVector.css'
 
-function PinkVectorText(props) {
+const PinkVectorText = (props) => {
   return (
     <div className="pink-vector-text-container" style={{top: props.top, left: props.left, rotate: props.rotate}}>
       <svg width={props.width} height="60" viewBox="0 0 181 50" fill="none" xmlns="http://www.w3.org/2000/svg">

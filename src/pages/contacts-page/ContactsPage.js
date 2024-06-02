@@ -5,11 +5,10 @@ import BigTitle from '../../components/BigTitle.js';
 import PinkVectorButton from '../../components/PinkVectorButton.js';
 import PageDirectory from '../../components/PageDirectory.js';
 
-function ContactsPage(props) {
+const ContactsPage = () => {
 	return  (
 		<div className="contacts-page-container">
 			<PageDirectory pages={[{page: "/", title: "Главная"}]} currentPage="Контакты"/>
-
 			<div className="contacts-container">
 				<div className="contacts-container-left">
 					<div className="contacts-container-left-top">
@@ -47,7 +46,7 @@ function ContactsPage(props) {
 			</div>
 
 			<ShopInstagram withHints={true}/>
-			<BottomBar changeContent={props.changeContent}/>
+			<BottomBar/>
 		</div>
 	);
 }

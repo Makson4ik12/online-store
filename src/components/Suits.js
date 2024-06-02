@@ -1,17 +1,17 @@
 import './Suits.css'
 
-function Suits() {
-  const suits = [
-    {id: 0, img: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/c9d1b1222676416bf68677f5b7dbb6f629295b08",
-     priceLeft: {cost: "1 899 ₴", top: "20%", left: "12%"}, priceRight: {cost: "899 ₴", top: "60%", left: "55%"}},
-    {id: 1, img: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/81ef103c55fb161c0a22e565f4af829cadb90093",
-    priceLeft: {cost: "1 899 ₴", top: "50%", left: "10%"}, priceRight: {cost: "899 ₴", top: "20%", left: "60%"}},
-    {id: 2, img: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0e7010878fedabf31e6d8ca8e91b715db4ea89c4",
-    priceLeft: {cost: "1 899 ₴", top: "30%", left: "10%"}, priceRight: {cost: "899 ₴", top: "60%", left: "70%"}},
-    {id: 3, img: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/796ab860adfaad961808d739b115492cca4406eb",
-    priceLeft: {cost: "1 899 ₴", top: "70%", left: "20%"}, priceRight: {cost: "899 ₴", top: "40%", left: "15%"}}
-  ];
+const suits = [
+  {id: 0, img: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/c9d1b1222676416bf68677f5b7dbb6f629295b08",
+   priceLeft: {cost: "1 899 ₴", top: "20%", left: "12%"}, priceRight: {cost: "899 ₴", top: "60%", left: "55%"}},
+  {id: 1, img: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/81ef103c55fb161c0a22e565f4af829cadb90093",
+  priceLeft: {cost: "1 899 ₴", top: "50%", left: "10%"}, priceRight: {cost: "899 ₴", top: "20%", left: "60%"}},
+  {id: 2, img: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0e7010878fedabf31e6d8ca8e91b715db4ea89c4",
+  priceLeft: {cost: "1 899 ₴", top: "30%", left: "10%"}, priceRight: {cost: "899 ₴", top: "60%", left: "70%"}},
+  {id: 3, img: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/796ab860adfaad961808d739b115492cca4406eb",
+  priceLeft: {cost: "1 899 ₴", top: "70%", left: "20%"}, priceRight: {cost: "899 ₴", top: "40%", left: "15%"}}
+];
 
+const Suits = () => {
   return (
     <div className="suits-container">
       {suits.map((item) => 

@@ -1,7 +1,7 @@
 import './TopCategories.css'
 import PinkVectorText from './PinkVectorText'
 
-function TopCategories() {
+const TopCategories = () => {
   return (
     <div className="top-categories-container">
       <TopCategoriesLeft />
@@ -10,7 +10,7 @@ function TopCategories() {
   );
 }
 
-function TopCategoriesLeft() {
+const TopCategoriesLeft = () => {
   const items = {
     topImage: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/f4961a2caa68814c1c3b64c237fdc8448c80aaa0",
     leftImage: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/bb90448d074fe4c20508a015bc0fa52cacdd3fa8",
@@ -39,7 +39,7 @@ function TopCategoriesLeft() {
   );
 }
 
-function TopCategoriesRight() {
+const TopCategoriesRight = () => {
   const items = {
     bottomImage: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/b64d0c258e155538dee74904923800a5283e4096",
     leftImage: "https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/4a399ecb4a8672884f335c05c27780a4e28db931",
