@@ -15,7 +15,7 @@ const NewProducts = () => {
 
   return (
     <div className="new-products-container">
-      {products.map((value) => <ProductCard img={value.image} descr={value.title} price={value.price} id={value.id} margin="1vw"/>)}
+      {products.map((value) => <ProductCard key={value.id} img={value.image} descr={value.title} price={value.price} id={value.id} margin="1vw"/>)}
     </div>
   );
 }

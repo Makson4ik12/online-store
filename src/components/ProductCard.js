@@ -56,8 +56,8 @@ const ProductCard = (props) => {
         {likeButton}
       </div>
       <div className="product-card-bottom-container">
-        <name style={{fontSize: props.nameFont}}>{props.descr}</name>
-        <price style={{fontSize: props.priceFont}}>{props.price}</price>
+        <h3 style={{fontSize: props.nameFont}}>{props.descr}</h3>
+        <h2 style={{fontSize: props.priceFont}}>{props.price}</h2>
       </div>
     </div>
   )
