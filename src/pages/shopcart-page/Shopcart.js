@@ -1,6 +1,6 @@
 import './Shopcart.css'
 import { useNavigate } from 'react-router-dom';
-import {useState} from 'react';
+import { useState } from 'react';
 import PinkVectorButton from '../../components/PinkVectorButton';
 import LocalDB from '../../test-data/LocalDB';
 

@@ -1,6 +1,6 @@
 import './App.css';
 import 'react-responsive-modal/styles.css';
-import { React } from 'react';
+import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import ScrollToTop from './features/ScrollToTop'
 import MainPage from './pages/main-page/MainPage';

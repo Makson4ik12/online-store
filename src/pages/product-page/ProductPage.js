@@ -1,6 +1,6 @@
 import './ProductPage.css'
 import LocalDB from '../../test-data/LocalDB';
-import { React, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Modal } from 'react-responsive-modal';
 import ProductCard from '../../components/ProductCard.js';
