@@ -78,7 +78,10 @@ export default function Header() {
           <HeaderRightDesktop handleChangeSearchMode={setSearchMode} />
         </div>
 
-        <div className="HeaderBottomMenu">
+        <div 
+          className="HeaderBottomMenu"
+          style={searchMode.mode ? {justifyContent: "center"} : {}}
+          >
           {!searchMode.mode ? (
             menuButtons.map((button) => 
               <button 
