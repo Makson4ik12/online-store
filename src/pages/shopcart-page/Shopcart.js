@@ -37,8 +37,7 @@ const Shopcart = ({isComponent = false, closeHandler = () => {}}) => {
           { shopcartItems.map((item) => <Shopcartitem product={item} removeHandler={removeItem}/>) }
         </div>
         
-        {isComponent === true 
-        ? 
+        {isComponent === true ? ( 
           <div className='shopcart-text-component'>
             <div className='shopcart-text-component-text'>
               <h2>Сумма заказа: </h2>
@@ -52,12 +51,12 @@ const Shopcart = ({isComponent = false, closeHandler = () => {}}) => {
 
             <p>К оплате: . . . . . . <b>{shopcartItems.reduce((total, item) => total += Number(item.price.replace(/ /g,'').slice(0, -1)), 0)} ₴</b></p>
           </div>
-        :
-        <>
-          <p>Сумма заказа: . . . . . . <b>{shopcartItems.reduce((total, item) => total += Number(item.price.replace(/ /g,'').slice(0, -1)), 0)} ₴</b></p>
-          <PinkVectorButton text="Оформить заказ" width="20vw" textSize="1.7vh" click={() => {closeHandler(); navigate("/order");}} />
-        </>
-        }
+        ) : (
+          <>
+            <p>Сумма заказа: . . . . . . <b>{shopcartItems.reduce((total, item) => total += Number(item.price.replace(/ /g,'').slice(0, -1)), 0)} ₴</b></p>
+            <PinkVectorButton text="Оформить заказ" width="20vw" textSize="1.7vh" click={() => {closeHandler(); navigate("/order");}} />
+          </>
+        )}
       </div>
     );
   } else {

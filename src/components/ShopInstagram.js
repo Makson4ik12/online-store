@@ -80,22 +80,21 @@ const ShopInstagram = ({withHints = false}) => {
 
   return (
     <div className="shop-instagram-container">
-      {withHints === true
-      ?
-      <div className="hints-container">
-        {hints.map((item) => 
-          <div className="hint">
-            {item.img}
-            <div>
-              <h1>{item.title}</h1>
-              <p>{item.descr}</p>
+      {withHints === true ? (
+        <div className="hints-container">
+          {hints.map((item) => 
+            <div className="hint">
+              {item.img}
+              <div>
+                <h1>{item.title}</h1>
+                <p>{item.descr}</p>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
-      :
-      <></>
-      }
+          )}
+        </div>
+      ) : (
+        <></>
+      )}
       <div className="instagram-container">
         <div className="instagram-container-left">
           <div className="instagram-container-left-top">

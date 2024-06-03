@@ -153,7 +153,8 @@
     p, a {
         font-style: italic;
         color: var(--accent1);
-        font-size: var(--menu_text_size);
+        font-size: 0.75vw;
+        font-family: 'Montserrat';
     }
 
     a:link, a:visited, a:hover, a:active {
@@ -166,11 +167,10 @@
 }
 
 .HeaderLeftContainer {
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     justify-content: flex-start;
 
     .HeaderLeftContainer:hover {
-        transform: scale(1.1, 1.1);
+        text-decoration: underline var(--accent1);
     }
 }
 
