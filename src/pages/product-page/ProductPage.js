@@ -1,7 +1,7 @@
 import './ProductPage.css'
 import LocalDB from '../../test-data/LocalDB.ts';
 import React, { useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Modal } from 'react-responsive-modal';
 import ProductCard from '../../components/ProductCard.js';
 import BigTitle from '../../components/BigTitle.js';
@@ -9,123 +9,130 @@ import ShopInstagram from '../../components/ShopInstagram.js';
 import BottomBar from '../../components/BottomBar.js';
 import PinkVectorButton from '../../components/PinkVectorButton.js';
 import Shopcart from '../shopcart-page/Shopcart.js';
+import ErrorPage from '../error-page/ErrorPage.js';
 
 const ProductPage = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const product = LocalDB.getDBItems().filter((item) => item.id === location.state.productId)[0];
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const [currentSize, setCurrentSize] = useState(product.sizes[0]);
+  const queryProductId = searchParams.get("id");
+  const foundedProduct = LocalDB.getDBItems().filter((item) => item.id === queryProductId);
+  const product = foundedProduct.length !== 0 ? foundedProduct[0] : {};
+
+  const [currentSize, setCurrentSize] = useState(product?.sizes ? product.sizes[0] : null);
   const [viewSizesTable, setViewSizesTable] = useState(false);
   const [viewShopcart, setViewShopcart] = useState(false);
 
-  return (
-    <div className='product-page-container'>
-      <div className='product-container'>
-        <ProductImages photos={product.photos} favouriteProductsList={LocalDB.getLSItems('favouriteProductsList')} id={product.id}/>
-        <div className='product-right'>
-          <h1>{product.title}</h1>
-          <h2>{product.price}</h2>
-          <p><i>Выбрать размер:</i></p>
+  if (foundedProduct.length === 0) 
+    return <ErrorPage />
+  else
+    return (
+      <div className='product-page-container'>
+        <div className='product-container'>
+          <ProductImages photos={product.photos} favouriteProductsList={LocalDB.getLSItems('favouriteProductsList')} id={product.id}/>
+          <div className='product-right'>
+            <h1>{product.title}</h1>
+            <h2>{product.price}</h2>
+            <p><i>Выбрать размер:</i></p>
 
-          <div className='product-right-sizes-container'>
-            {
-              product.sizes.map((value) => 
-              value.name === currentSize.name ? (
-                <div className='product-size-selected'>
-                  <p>{value.name}</p>
-                </div>
-              ) : (
-                <div className='product-size' onClick={() => setCurrentSize(value)}>
-                  <p>{value.name}</p>
-                </div>
-              )
-              )
-            }
-          </div>
-
-          <div className='product-buttons-container'>
-            <PinkVectorButton text="В КОРЗИНУ" width="17vw" textSize="1.7vh" click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); setViewShopcart(true);}}/>
-            <PinkVectorButton text="БЫСТРЫЙ ЗАКАЗ" width="17vw" textSize="1.7vh" isTransparent={true} click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); navigate("/order");}}/>
-          </div>
-
-          <p>{product.description}</p>
-          <div className='product-right-border'></div>
-
-          <div className='product-params-container'>
-            <div className='product-params'>
-              <h3>ПАРАМЕТРЫ МОДЕЛИ:</h3>
-              <p>(На модели {currentSize.name})</p>
-
-              <div className='product-params-sizes'>
-                <p className='vertical-text'>Рост 177см</p>
-
-                <svg width="5vw" height="auto" viewBox="0 0 70 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M24.8592 43.5128C25.8108 45.674 26.5279 47.9196 25.9757 50.1209C24.0003 57.9952 21.3228 64.2273 21.7505 66.1457L25.9757 66.4783M24.8592 43.5128C22.8619 38.9772 19.8315 34.8139 25.3346 32.2152H31.8561M24.8592 43.5128L21.7505 60.5658M21.7505 60.5658C19.5954 61.2304 15.7129 63.2768 17.4235 66.1457C19.5617 69.7318 23.2978 63.337 21.7505 60.5658ZM36.8722 35.4127C37.3642 34.0803 37.9218 32.9648 38.3775 32.2152H31.8561M36.8722 35.4127C35.8252 38.2484 35.0755 42.0668 36.2393 45.4313C38.1202 50.8691 39.1747 50.8637 41.2929 53.1052M36.8722 35.4127C40.5815 36.8338 48 40.0596 48 41.5944C48 42.9366 44.5803 48.2891 42.2269 51.7498M41.2929 53.1052C41.5827 53.4118 41.8924 53.7605 42.2269 54.171C43.7342 56.0208 45.6475 63.9765 45.6475 68.0265L38.3775 67.4544M41.2929 53.1052C43.5286 54.3841 48 56.3879 48 54.171C48 51.3999 46.0762 50.3944 42.2269 51.7498M41.2929 53.1052C41.5734 52.7039 41.8892 52.2463 42.2269 51.7498M38.3775 67.4544L32.6048 111.938M38.3775 67.4544L25.9757 66.4783M32.6048 111.938C29.7539 112.649 24.6506 114.794 27.0455 117.693C30.039 121.317 41.5853 113.856 32.6048 111.938ZM25.9757 66.4783L18.7064 82.7348L21.7505 107.462M21.7505 107.462C19.3817 109.735 15.7131 114.965 19.9893 117.693C25.3346 121.104 29.7124 102.985 21.7505 107.462ZM31.8561 32.2152C21.7505 32.2152 19.5617 -0.398603 33.8878 0.667164C45.6475 1.54201 41.9617 32.2152 31.8561 32.2152Z" stroke="#FDA3C4"/>
-                  <path d="M22 36.3499H61L85.5 8.08203" stroke="#1F1F1F"/>
-                  <path d="M2.99931 116.687L2.99882 2.62374M2.99931 116.687L5.99853 111.728M2.99931 116.687L0.499314 111.728M2.99882 2.62374L0.499314 8.07898M2.99882 2.62374L5.99853 8.07898" stroke="#1F1F1F"/>
-                  <path d="M22 63.1285H61L84 84.4535" stroke="#1F1F1F"/>
-                  <path d="M26 49.2426H49H72" stroke="#1F1F1F"/>
-                </svg>
-
-                <div className='product-params'>
-                  <div>
-                    <h3>{currentSize.sizes[0] || "-"} см</h3>
-                    <p>объем груди</p>
+            <div className='product-right-sizes-container'>
+              {
+                product.sizes.map((value) => 
+                value.name === currentSize.name ? (
+                  <div className='product-size-selected'>
+                    <p>{value.name}</p>
                   </div>
-
-                  <div>
-                    <h3>{currentSize.sizes[1] || "-"} см</h3>
-                    <p>объем талии</p>
+                ) : (
+                  <div className='product-size' onClick={() => setCurrentSize(value)}>
+                    <p>{value.name}</p>
                   </div>
+                )
+                )
+              }
+            </div>
 
-                  <div>
-                    <h3>{currentSize.sizes[2] || "-"} см</h3>
-                    <p>объем бедер</p>
+            <div className='product-buttons-container'>
+              <PinkVectorButton text="В КОРЗИНУ" width="17vw" textSize="1.7vh" click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); setViewShopcart(true);}}/>
+              <PinkVectorButton text="БЫСТРЫЙ ЗАКАЗ" width="17vw" textSize="1.7vh" isTransparent={true} click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); navigate("/order");}}/>
+            </div>
+
+            <p>{product.description}</p>
+            <div className='product-right-border'></div>
+
+            <div className='product-params-container'>
+              <div className='product-params'>
+                <h3>ПАРАМЕТРЫ МОДЕЛИ:</h3>
+                <p>(На модели {currentSize.name})</p>
+
+                <div className='product-params-sizes'>
+                  <p className='vertical-text'>Рост 177см</p>
+
+                  <svg width="5vw" height="auto" viewBox="0 0 70 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.8592 43.5128C25.8108 45.674 26.5279 47.9196 25.9757 50.1209C24.0003 57.9952 21.3228 64.2273 21.7505 66.1457L25.9757 66.4783M24.8592 43.5128C22.8619 38.9772 19.8315 34.8139 25.3346 32.2152H31.8561M24.8592 43.5128L21.7505 60.5658M21.7505 60.5658C19.5954 61.2304 15.7129 63.2768 17.4235 66.1457C19.5617 69.7318 23.2978 63.337 21.7505 60.5658ZM36.8722 35.4127C37.3642 34.0803 37.9218 32.9648 38.3775 32.2152H31.8561M36.8722 35.4127C35.8252 38.2484 35.0755 42.0668 36.2393 45.4313C38.1202 50.8691 39.1747 50.8637 41.2929 53.1052M36.8722 35.4127C40.5815 36.8338 48 40.0596 48 41.5944C48 42.9366 44.5803 48.2891 42.2269 51.7498M41.2929 53.1052C41.5827 53.4118 41.8924 53.7605 42.2269 54.171C43.7342 56.0208 45.6475 63.9765 45.6475 68.0265L38.3775 67.4544M41.2929 53.1052C43.5286 54.3841 48 56.3879 48 54.171C48 51.3999 46.0762 50.3944 42.2269 51.7498M41.2929 53.1052C41.5734 52.7039 41.8892 52.2463 42.2269 51.7498M38.3775 67.4544L32.6048 111.938M38.3775 67.4544L25.9757 66.4783M32.6048 111.938C29.7539 112.649 24.6506 114.794 27.0455 117.693C30.039 121.317 41.5853 113.856 32.6048 111.938ZM25.9757 66.4783L18.7064 82.7348L21.7505 107.462M21.7505 107.462C19.3817 109.735 15.7131 114.965 19.9893 117.693C25.3346 121.104 29.7124 102.985 21.7505 107.462ZM31.8561 32.2152C21.7505 32.2152 19.5617 -0.398603 33.8878 0.667164C45.6475 1.54201 41.9617 32.2152 31.8561 32.2152Z" stroke="#FDA3C4"/>
+                    <path d="M22 36.3499H61L85.5 8.08203" stroke="#1F1F1F"/>
+                    <path d="M2.99931 116.687L2.99882 2.62374M2.99931 116.687L5.99853 111.728M2.99931 116.687L0.499314 111.728M2.99882 2.62374L0.499314 8.07898M2.99882 2.62374L5.99853 8.07898" stroke="#1F1F1F"/>
+                    <path d="M22 63.1285H61L84 84.4535" stroke="#1F1F1F"/>
+                    <path d="M26 49.2426H49H72" stroke="#1F1F1F"/>
+                  </svg>
+
+                  <div className='product-params'>
+                    <div>
+                      <h3>{currentSize.sizes[0] || "-"} см</h3>
+                      <p>объем груди</p>
+                    </div>
+
+                    <div>
+                      <h3>{currentSize.sizes[1] || "-"} см</h3>
+                      <p>объем талии</p>
+                    </div>
+
+                    <div>
+                      <h3>{currentSize.sizes[2] || "-"} см</h3>
+                      <p>объем бедер</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className='product-params'>
-              <h3>СОСТАВ:</h3>
-              {product.composition.map((value) => <p>{value}</p>)}
+              <div className='product-params'>
+                <h3>СОСТАВ:</h3>
+                {product.composition.map((value) => <p>{value}</p>)}
+              </div>
             </div>
-          </div>
-          
-          <div style={{width: "100%", justifyContent: "center", display: "flex", marginTop: "10px"}}>
-            <PinkVectorButton click={() => setViewSizesTable(true)} text="ТАБЛИЦА РАЗМЕРОВ" width="20vw" textSize="1.7vh" transparent="1"/>
+            
+            <div style={{width: "100%", justifyContent: "center", display: "flex", marginTop: "10px"}}>
+              <PinkVectorButton click={() => setViewSizesTable(true)} text="ТАБЛИЦА РАЗМЕРОВ" width="20vw" textSize="1.7vh" transparent="1"/>
+            </div>
           </div>
         </div>
+
+        <ProductPageInfo inst_photo={product.inst_photo}/>
+        <BigTitle title="МОГУТ ПОНРАВИТЬСЯ" description="ТЕБЕ МОГУТ ПОНРАВИТЬСЯ" />
+        <MayLikeProducts />
+        <ShopInstagram />
+        <BottomBar />
+
+        <Modal open={viewSizesTable} onClose={() => setViewSizesTable(false)} center closeIcon={
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23" cy="23" r="23" fill="white"/>
+            <path d="M33.1858 12.792L12.3906 32.7865" stroke="#FDA3C4" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12.7908 12.3921L32.7853 33.1873" stroke="#FDA3C4" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          } classNames={{modal: 'sizes-table-modal'}}>
+          <SizesTable />
+        </Modal>
+
+        <Modal open={viewShopcart} onClose={() => setViewShopcart(false)} classNames={{modal: 'shopcart-modal'}} closeIcon={
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23" cy="23" r="22" fill="white" stroke="black" stroke-width="2"/>
+            <path d="M33.1858 12.792L12.3906 32.7865" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12.7908 12.3921L32.7853 33.1873" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          }>
+          <Shopcart closeHandler={() => setViewShopcart(false)} />
+        </Modal>
       </div>
-
-      <ProductPageInfo inst_photo={product.inst_photo}/>
-      <BigTitle title="МОГУТ ПОНРАВИТЬСЯ" description="ТЕБЕ МОГУТ ПОНРАВИТЬСЯ" />
-      <MayLikeProducts />
-      <ShopInstagram />
-      <BottomBar />
-
-      <Modal open={viewSizesTable} onClose={() => setViewSizesTable(false)} center closeIcon={
-        <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="23" cy="23" r="23" fill="white"/>
-          <path d="M33.1858 12.792L12.3906 32.7865" stroke="#FDA3C4" stroke-width="2" stroke-linecap="round"/>
-          <path d="M12.7908 12.3921L32.7853 33.1873" stroke="#FDA3C4" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        } classNames={{modal: 'sizes-table-modal'}}>
-        <SizesTable />
-      </Modal>
-
-      <Modal open={viewShopcart} onClose={() => setViewShopcart(false)} classNames={{modal: 'shopcart-modal'}} closeIcon={
-        <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="23" cy="23" r="22" fill="white" stroke="black" stroke-width="2"/>
-          <path d="M33.1858 12.792L12.3906 32.7865" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>
-          <path d="M12.7908 12.3921L32.7853 33.1873" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        }>
-        <Shopcart closeHandler={() => setViewShopcart(false)} />
-      </Modal>
-    </div>
-  );
+    );
 }
 
 const ProductPageInfo = (props) => {

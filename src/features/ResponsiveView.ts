@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const screenSizes = { 
+export const screenSizes = { 
     desktop: {width: 1300, name: "DESKTOP"},
     bigTablet: {width: 1000, name: "BIG_TABLET"}, 
     smallTablet: {width: 768, name: "SMALL_TABLET"}, 
@@ -8,7 +8,7 @@ const screenSizes = {
     smallMobile: {width: 320, name: "SMALL_MOBILE"} 
 };
 
-export default function HandleResponsiveView(): string {
+export default function HandleResponsiveView(): {width: number, name: string} {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -21,14 +21,14 @@ export default function HandleResponsiveView(): string {
   }, []);
 
   if (windowWidth >= screenSizes.desktop.width) {
-    return screenSizes.desktop.name;
+    return screenSizes.desktop;
   } else if ((windowWidth < screenSizes.desktop.width) && (windowWidth >= screenSizes.bigTablet.width)) {
-    return screenSizes.bigTablet.name;
+    return screenSizes.bigTablet;
   } else if ((windowWidth < screenSizes.bigTablet.width) && (windowWidth >= screenSizes.smallTablet.width)) {
-    return screenSizes.smallTablet.name;
+    return screenSizes.smallTablet;
   } else if ((windowWidth < screenSizes.smallTablet.width) && (windowWidth >= screenSizes.bigMobile.width)) {
-    return screenSizes.bigMobile.name;
+    return screenSizes.bigMobile;
   } else {
-    return screenSizes.smallMobile.name;
+    return screenSizes.smallMobile;
   }
 }

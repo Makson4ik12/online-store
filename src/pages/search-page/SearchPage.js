@@ -1,12 +1,14 @@
 import './SearchPage.css'
-import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import BigTitle from '../../components/BigTitle';
 import LocalDB from '../../test-data/LocalDB.ts';
 import ProductCard from '../../components/ProductCard.js';
 
 const SearchPage = () => {
-  const location = useLocation();
-  const find_products = LocalDB.find(location.state.searchText || "");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const querySearch = searchParams.get("s");
+  const find_products = LocalDB.find(querySearch || "");
 
   return (
     <div className="search-page-container">

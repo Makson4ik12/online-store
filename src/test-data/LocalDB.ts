@@ -25,7 +25,7 @@ class LocalDB {
         item: string,
         isNonSet: boolean
     ){
-        const table = JSON.parse(localStorage.getItem(tableName) || "") || [];
+        const table = JSON.parse(localStorage.getItem(tableName) || '[]') || [];
         let values;
 
         if(isNonSet) {
@@ -44,7 +44,7 @@ class LocalDB {
     }
 
     static getLSItems(tableName: string, isNonSet: boolean) {
-        const table = JSON.parse(localStorage.getItem(tableName) || "") || [];
+        const table = JSON.parse(localStorage.getItem(tableName) || '[]') || [];
 
         if(isNonSet) 
             return Array.from(table)
