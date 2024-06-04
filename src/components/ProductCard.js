@@ -1,6 +1,6 @@
 import './ProductCard.css'
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { createSearchParams, useNavigate } from 'react-router-dom';
 import LocalDB from '../test-data/LocalDB.ts'
 
 const ProductCard = ({
@@ -60,7 +60,7 @@ const ProductCard = ({
     <div 
       className="product-card-container" 
       style={{width: width, height: height, margin: margin}}
-      onClick={() => navigate("/product", {state: {productId: id}})}
+      onClick={() => navigate({pathname: "/product", search: createSearchParams({id: id}).toString()})}
     >
       <div className="product-card-top-container">
         <img src={img}/>
