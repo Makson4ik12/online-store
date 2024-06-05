@@ -9,13 +9,15 @@ import ShopInstagram from '../../components/ShopInstagram';
 import BottomBar from '../../components/BottomBar';
 import TestDB from '../../test-data/products_db.json';
 import ProductCard from '../../components/ProductCard';
+import HandleResponsiveView, { screenSizes } from '../../features/ResponsiveView.ts';
 
 const NewProducts = () => {
-  const products = TestDB.products.filter((item) => Number(item.id) <= 4);
-
+  const screenSize = HandleResponsiveView();
+  const products = TestDB.products.slice(0, ((screenSize.width === screenSizes.bigMobile.width) ? 3 : 4));
+  
   return (
     <div className="new-products-container">
-      {products.map((value) => <ProductCard key={value.id} img={value.image} descr={value.title} price={value.price} id={value.id} margin="1vw"/>)}
+      {products.map((value) => <ProductCard componentId="product-card" key={value.id} img={value.image} descr={value.title} price={value.price} id={value.id}/>)}
     </div>
   );
 }
