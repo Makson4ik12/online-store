@@ -68,6 +68,16 @@
     }
 }
 
+#main-page-button {
+    text-align: center;
+    width: 16vw;
+
+    p {
+        font-size: 1vw;
+        width: 100%;
+    }
+}
+
 @media (prefers-reduced-motion: no-preference) {
     .new-collection-image {
         transition: opacity 1.5s ease, transform 1.5s ease;
@@ -87,6 +97,16 @@
             font-size: 1.7vw;
         }
     }
+
+    #main-page-button {
+        text-align: center;
+        width: 20vw;
+    
+        p {
+            font-size: 1.2vw;
+            width: 100%;
+        }
+    }
 }
 
 @media screen and (768px <= width <= 1000px) {
@@ -100,6 +120,16 @@
 
         h2 {
             font-size: 1.9vw;
+        }
+    }
+
+    #main-page-button {
+        text-align: center;
+        width: 23vw;
+    
+        p {
+            font-size: 1.4vw;
+            width: 100%;
         }
     }
 }
@@ -116,6 +146,16 @@
 
         h2 {
             font-size: 2.5vw;
+        }
+    }
+
+    #main-page-button {
+        text-align: center;
+        width: 27vw;
+    
+        p {
+            font-size: 1.6vw;
+            width: 100%;
         }
     }
 }
@@ -137,6 +177,16 @@
 
         h2 {
             font-size: 3.5vw;
+        }
+    }
+
+    #main-page-button {
+        text-align: center;
+        width: 27vw;
+    
+        p {
+            font-size: 1.6vw;
+            width: 100%;
         }
     }
 }

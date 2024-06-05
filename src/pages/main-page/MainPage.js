@@ -70,15 +70,15 @@ const MainPage = () => {
       <TopCategories />
       <BigTitle title="НОВИНКИ" titleFontSize="5vw" descrFontSize="3vw" rightWaveOffset="1vw"/>
       <NewProducts/>
-      <PinkVectorButton text="СМОТРЕТЬ ВСЕ" width='20vw' textSize="1vw"/>
+      <PinkVectorButton componentId="main-page-button" text="СМОТРЕТЬ ВСЕ" width='20vw' textSize="1vw"/>
       <img className="new-collection-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0301b260724e748a9a77dd641f1d98faad302fae" />
       <ShopMap />
       <RunningLine text="ТОПОВЫЕ ТОВАРЫ" />
       <TopProducts />
-      <PinkVectorButton text="СМОТРЕТЬ ВСЕ" width='600' height="60px"/>
+      <PinkVectorButton componentId="main-page-button" text="СМОТРЕТЬ ВСЕ" width='600' height="60px"/>
       <BigTitle title="КОСТЮМЫ" />
       <Suits />
-      <PinkVectorButton text="СМОТРЕТЬ ВСЕ" width='600' height="60px"/>
+      <PinkVectorButton componentId="main-page-button" text="СМОТРЕТЬ ВСЕ" width='600' height="60px"/>
       <ShopInstagram withHints={true}/>
       <BottomBar/>
     </div>

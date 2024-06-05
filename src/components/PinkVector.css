@@ -23,5 +23,8 @@
 }
 
 .pink-vector-button-container:hover {
-    transform: scale(1.1, 1.1);
+    transform: scale(1.01, 1.01);
+    svg path {
+        fill: #fa94b9;
+    }
 }

@@ -4,12 +4,12 @@ import './ShopMap.css'
 const ShopMap = () => {
   return (
     <div className="shopmap-container">
-      <img style={{width: "50%"}} src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/2bc9e024fe0016f1f601b3d3b8cd6cd8b43f824f"/>
+      <img src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/2bc9e024fe0016f1f601b3d3b8cd6cd8b43f824f"/>
       <img className="shopmap-map" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/306b1f7e29765efcc98dee3a9b259fe632baff44" />
       <h1>BOORIVA<br/>STORE</h1>
-      <h2>г.Киев,  ул. Нижний вал, 37<br/>Ежедневно с 11:00 до 21:00</h2>
+      <h2>г.Киев,  ул. Нижний вал, 37<br></br><br></br>Ежедневно с 11:00 до 21:00</h2>
       <h3>Ты можешь заказать примерку  понравившейся вещи или просто заглянуть, гуляя по Подолу, и примерять что-то из в наличии</h3>
-      <PinkVectorButton text="ПРОЛОЖИТЬ МАРШРУТ" width='50vw' textSize="0.8vw"/>
+      <PinkVectorButton componentId="shopmap-button" text="ПРОЛОЖИТЬ МАРШРУТ" width='50vw' textSize="0.8vw"/>
 
       <svg className="arrow1" width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1.35562 24.5675C4.18318 25.757 6.61923 24.9852 9.64348 24.6058C13.2326 24.1953 16.7471 23.7181 20.3362 23.3075C22.1641 23.065 23.2591 21.0925 22.2516 19.5193C18.7433 13.6933 15.9843 7.33032 12.5427 1.42989C11.6097 -0.07662 8.91461 1.13439 9.64745 2.8644C11.7871 8.27014 14.5505 13.429 16.7568 18.7602C14.3641 19.0339 11.8301 19.3154 9.43741 19.5891C6.47987 19.894 3.64015 19.7674 1.25866 21.5277C0.16797 22.2961 0.0535877 24.0728 1.35562 24.5675Z" fill="#1F1F1F"/>
