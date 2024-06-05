@@ -22,17 +22,17 @@ const TopCategoriesLeft = () => {
     <div className="top-categories-half-container">
       <div className="big-image-container">
         <img className="big-image" src={items.topImage} alt={items.altTop} />
-        <PinkVectorText text="ФУТБОЛКИ" top='80%' left='10%' rotate='0deg' width='15vw' textSize="1.2vw"/>
+        <PinkVectorText textId="top-big" text="ФУТБОЛКИ" />
       </div>
 
       <div className="small-images-container">
         <div className="small-image-container">
           <img className="small-image" src={items.leftImage} alt={items.altLeft} />
-          <PinkVectorText text="НИЗ" top='55%' left='60%' rotate='-52deg' width='11vw' textSize="1.2vw" />
+          <PinkVectorText textId="top-small-left" text="НИЗ" />
         </div>
         <div className="small-image-container">
           <img className="small-image" src={items.rightImage} alt={items.altRight} />
-          <PinkVectorText text="ВЕРХ" top='10%' left='40%' rotate='0deg' width='13vw' textSize="1.3vw" />
+          <PinkVectorText textId="top-small-right" text="ВЕРХ" />
         </div>
       </div>
     </div>
@@ -52,17 +52,17 @@ const TopCategoriesRight = () => {
       <div className="small-images-container">
         <div className="small-image-container">
           <img className="small-image" src={items.leftImage} alt={items.altLeft} />
-          <PinkVectorText text="ПЛАТЬЯ" top='50%' left='10%' rotate='0deg' width='15vw' textSize="1.4vw"/>
+          <PinkVectorText textId="bottom-small-left" text="ПЛАТЬЯ"/>
         </div>
         <div className="small-image-container">
           <img className="small-image" src={items.rightImage} alt={items.altRight} />
-          <PinkVectorText text="КОСТЮМЫ" top='75%' left='40%' rotate='-2deg' width='13vw' textSize="1.3vw"/>
+          <PinkVectorText textId="bottom-small-right" text="КОСТЮМЫ" />
         </div>
       </div>
       
       <div className="big-image-container">
         <img className="big-image" src={items.bottomImage} alt={items.altBottom} />
-        <PinkVectorText text="ХУДИ" top='75%' left='15%' rotate='35deg' width='13vw' textSize="1.4vw"/>
+        <PinkVectorText textId="bottom-big" text="ХУДИ"/>
       </div>
     </div>
   );
