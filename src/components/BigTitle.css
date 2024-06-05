@@ -12,7 +12,7 @@
     display: inline-block;
 
     h1 {
-        font-family: 'Sunday Best';
+        font-family:"Sunday Best";
         font-size: 54px;
         font-weight: 400;
         color: var(--accent1);

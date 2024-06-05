@@ -19,8 +19,3 @@
   -webkit-user-select: none;
   user-select: none;
 }
-
-@font-face {
-  font-family: 'Sunday Best';
-  src: local('MyFont'), url(./fonts/sundaybestrusbyalince.otf) format('truetype');
-}
