@@ -240,7 +240,7 @@
 
                 .small-image {
                     display: block;
-                    height: calc(25vh - 10px);
+                    height: calc(25vh - 5px);
                     width: 100%;
                 }
             }

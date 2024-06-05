@@ -8,11 +8,7 @@ const ProductCard = ({
   img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVLDP5s2j9u1x86fOb7kNKXanJeMn8zZ30ZQ&s",
   descr = "Описание",
   price = "Цена",
-  width = "25%",
-  height = "60vh",
-  nameFont = "1vw",
-  priceFont = "1.5vw",
-  margin = "0"
+  componentId = "product-card"
 }) => {
   
   const [likeButton, setLikeButton] = useState(null);
@@ -59,16 +55,16 @@ const ProductCard = ({
   return (
     <div 
       className="product-card-container" 
-      style={{width: width, height: height, margin: margin}}
       onClick={() => navigate({pathname: "/product", search: createSearchParams({id: id}).toString()})}
+      id={componentId}
     >
       <div className="product-card-top-container">
         <img src={img}/>
         {likeButton}
       </div>
       <div className="product-card-bottom-container">
-        <h3 style={{fontSize: nameFont}}>{descr}</h3>
-        <h2 style={{fontSize: priceFont}}>{price}</h2>
+        <h3>{descr}</h3>
+        <h2>{price}</h2>
       </div>
     </div>
   )
