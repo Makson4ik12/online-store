@@ -1,6 +1,8 @@
+import HandleResponsiveView, { screenSizes } from '../features/ResponsiveView.ts';
 import './ShopInstagram.css'
 
 const ShopInstagram = ({withHints = false}) => {
+  const screenSize = HandleResponsiveView();
   const hints = [
     {img: 
       <svg width="81" height="98" viewBox="0 0 81 98" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,52 +80,156 @@ const ShopInstagram = ({withHints = false}) => {
       , title: "Сделано в Украине", descr: "Прям в Киеве"}
   ];
 
-  return (
-    <div className="shop-instagram-container">
-      {withHints === true ? (
-        <div className="hints-container">
-          {hints.map((item) => 
-            <div className="hint">
-              {item.img}
-              <div>
-                <h1>{item.title}</h1>
-                <p>{item.descr}</p>
+  switch(screenSize.width) {
+    case screenSizes.smallTablet.width: {
+      return (
+        <div className="shop-instagram-container">
+          {withHints === true ? (
+            <div className="hints-container">
+              {hints.map((item) => 
+                <div className="hint">
+                  {item.img}
+                  <div>
+                    <h1>{item.title}</h1>
+                    <p>{item.descr}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <></>
+          )}
+          <div className="instagram-container">
+            <div className="instagram-container-left">
+              <div className="instagram-container-left-top">
+                <h1>INSTAGRAM</h1>
+                <p>Мы в экстазе, когда ты нас отмечаешь&#41; <br></br> Отмечай плз чаще</p>
+              </div>
+    
+              <div className="instagram-container-left-bottom">
+                <img className="instagram-container-big-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/fc68fbbb383c9a89f8e55461048bd9f4651c35a8" />
+                <img className="instagram-container-small-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/4a07ff69b5d8b986653d9853a07043f87f24445c" />
+              </div>
+
+              <div className="instagram-container-right-top">
+                <img className="instagram-container-small-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/1c119be13518660339d679edc2adb7f5fa87da41" />
+                <img className="instagram-container-big-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/3acaecbba7444dc693cfbdbad7f433ef3cf35ae1" />
               </div>
             </div>
+    
+            <div className="instagram-container-right">
+              <img className="instagram-container-center-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0a168d37a6080c3ef1a04c76faf67957fa0cb0cc" />
+
+              <div className="instagram-container-right-bottom">
+                <h1>#boorivagirls </h1>
+                <p>Ставь тэг чтобы быть в нашей<br></br>тусовке.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    case screenSizes.bigMobile.width:
+    case screenSizes.smallMobile.width: {
+      return (
+        <div className="shop-instagram-container">
+          {withHints === true ? (
+            <div className="hints-container">
+              {hints.map((item) => 
+                <div className="hint">
+                  {item.img}
+                  <div>
+                    <h1>{item.title}</h1>
+                    <p>{item.descr}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <></>
           )}
-        </div>
-      ) : (
-        <></>
-      )}
-      <div className="instagram-container">
-        <div className="instagram-container-left">
-          <div className="instagram-container-left-top">
-            <h1>INSTAGRAM</h1>
-            <p>Мы в экстазе, когда ты нас отмечаешь&#41; <br></br> Отмечай плз чаще</p>
-          </div>
+          <div className="instagram-container">
+            <div className="instagram-container-left">
+              <div className="instagram-container-left-top">
+                <h1>INSTAGRAM</h1>
+                <p>Мы в экстазе, когда ты нас отмечаешь&#41; <br></br> Отмечай плз чаще</p>
+              </div>
+    
+              <div className="instagram-container-left-bottom">
+                <img className="instagram-container-big-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/fc68fbbb383c9a89f8e55461048bd9f4651c35a8" />
+                <img className="instagram-container-small-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/4a07ff69b5d8b986653d9853a07043f87f24445c" />
+              </div>
 
-          <div className="instagram-container-left-bottom">
-            <img className="instagram-container-big-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/fc68fbbb383c9a89f8e55461048bd9f4651c35a8" />
-            <img className="instagram-container-small-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/4a07ff69b5d8b986653d9853a07043f87f24445c" />
-          </div>
-        </div>
+              <div className="instagram-container-right-top">
+                <img className="instagram-container-small-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/1c119be13518660339d679edc2adb7f5fa87da41" />
+              </div>
+            </div>
+    
+            <div className="instagram-container-right">
+              <img className="instagram-container-center-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0a168d37a6080c3ef1a04c76faf67957fa0cb0cc" />
+              <img className="instagram-container-big-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/3acaecbba7444dc693cfbdbad7f433ef3cf35ae1" />
 
-        <img className="instagram-container-center-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0a168d37a6080c3ef1a04c76faf67957fa0cb0cc" />
-
-        <div className="instagram-container-right">
-          <div className="instagram-container-right-top">
-            <img className="instagram-container-small-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/1c119be13518660339d679edc2adb7f5fa87da41" />
-            <img className="instagram-container-big-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/3acaecbba7444dc693cfbdbad7f433ef3cf35ae1" />
-          </div>
-
-          <div className="instagram-container-right-bottom">
-            <h1>#boorivagirls </h1>
-            <p>Ставь тэг чтобы быть в нашей<br></br>тусовке.</p>
+              <div className="instagram-container-right-bottom">
+                <h1>#boorivagirls </h1>
+                <p>Ставь тэг чтобы быть в нашей<br></br>тусовке.</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
+      );
+    };
+
+
+    default: {
+      return (
+        <div className="shop-instagram-container">
+          {withHints === true ? (
+            <div className="hints-container">
+              {hints.map((item) => 
+                <div className="hint">
+                  {item.img}
+                  <div>
+                    <h1>{item.title}</h1>
+                    <p>{item.descr}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <></>
+          )}
+          <div className="instagram-container">
+            <div className="instagram-container-left">
+              <div className="instagram-container-left-top">
+                <h1>INSTAGRAM</h1>
+                <p>Мы в экстазе, когда ты нас отмечаешь&#41; <br></br> Отмечай плз чаще</p>
+              </div>
+    
+              <div className="instagram-container-left-bottom">
+                <img className="instagram-container-big-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/fc68fbbb383c9a89f8e55461048bd9f4651c35a8" />
+                <img className="instagram-container-small-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/4a07ff69b5d8b986653d9853a07043f87f24445c" />
+              </div>
+            </div>
+    
+            <img className="instagram-container-center-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0a168d37a6080c3ef1a04c76faf67957fa0cb0cc" />
+    
+            <div className="instagram-container-right">
+              <div className="instagram-container-right-top">
+                <img className="instagram-container-small-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/1c119be13518660339d679edc2adb7f5fa87da41" />
+                <img className="instagram-container-big-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/3acaecbba7444dc693cfbdbad7f433ef3cf35ae1" />
+              </div>
+    
+              <div className="instagram-container-right-bottom">
+                <h1>#boorivagirls </h1>
+                <p>Ставь тэг чтобы быть в нашей<br></br>тусовке.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
 }
 
 export default ShopInstagram;

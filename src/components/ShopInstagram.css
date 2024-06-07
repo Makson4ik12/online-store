@@ -7,7 +7,7 @@
     justify-content: center;
     gap: 50px;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 8vw;
 }
 
 .hints-container {
@@ -25,14 +25,14 @@
         gap: 10px;
 
         h1 {
-            font-size: 25px;
+            font-size: 1.3vw;
             font-weight: 600;
             color: var(--main_black);
             font-family: 'Montserrat';
         }
 
         p {
-            font-size: 16px;
+            font-size: 0.85vw;
             font-weight: 400;
             color: var(--main_black);
             font-family: 'Montserrat';
@@ -43,7 +43,7 @@
 
 .instagram-container {
     width: 100%;
-    height: 60vh;
+    height: 25vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -74,7 +74,7 @@
     justify-content: flex-start;
 
     h1 {
-        font-size: 7vh;
+        font-size: 3vw;
         font-weight: 400;
         color: var(--main_black);
         font-family: 'Sunday Best';
@@ -82,7 +82,7 @@
     }
 
     p {
-        font-size: 2vh;
+        font-size: 0.9vw;
         font-weight: 400;
         color: var(--main_black);
         font-family: 'Montserrat';
@@ -131,7 +131,7 @@
     justify-content: flex-end;
 
     h1 {
-        font-size: 42px;
+        font-size: 2.5vw;
         font-weight: 600;
         color: var(--accent2);
         font-family: 'Montserrat';
@@ -139,10 +139,315 @@
     }
 
     p {
-        font-size: 16px;
+        font-size: 0.9vw;
         font-weight: 400;
         color: var(--main_black);
         font-family: 'Montserrat';
-        margin-left: 10vh;
+        margin-left: 5vw;
+    }
+}
+
+@media screen and (1000px <= width <= 1300px) {
+    .shop-instagram-container {
+        width: 90%;
+    }
+
+    .hints-container {
+        .hint {
+            h1 {
+                font-size: 1.7vw;
+            }
+    
+            p {
+                font-size: 1.1vw;
+            }
+        }
+    }
+
+    .instagram-container-big-image {
+        width: 60%;
+        height: 90%;
+        object-fit: cover;
+    }
+    
+    .instagram-container-small-image {
+        width: 40%;
+    }
+
+    .instagram-container-left-top {
+        h1 {
+            font-size: 4vw;
+        }
+    
+        p {
+            font-size: 1.2vw;
+        }
+    }
+
+    .instagram-container-right-bottom {
+        h1 {
+            font-size: 2.8vw;
+        }
+    
+        p {
+            font-size: 1.3vw;
+        }
+    }
+}
+
+@media screen and (768px <= width <= 1000px) {
+    .shop-instagram-container {
+        width: 95%;
+        height: auto;
+    }
+
+    .instagram-container {
+        width: 100%;
+        height: 80vw;
+
+        .instagram-container-center-image {
+            width: 100%;
+            height: 60vw;
+            object-fit: cover;
+            aspect-ratio: auto;
+        }
+    }
+
+    .hints-container {
+        flex-wrap: wrap;
+
+        .hint {
+            width: 40%;
+            align-items: center;
+
+            h1 {
+                font-size: 2.3vw;
+            }
+    
+            p {
+                font-size: 1.4vw;
+            }
+        }
+    }
+
+    .instagram-container-left, .instagram-container-right {
+        width: 50%;
+        height: 100%;
+        aspect-ratio: auto;
+    }
+
+    .instagram-container-left {
+        gap: 10px;
+    }
+
+    .instagram-container-left-top {
+        height: 20vw;
+
+        h1 {
+            font-size: 6vw;
+        }
+    
+        p {
+            font-size: 1.9vw;
+        }
+    }
+
+    .instagram-container-right-bottom {
+        height: 20vw;
+
+        h1 {
+            font-size: 5vw;
+        }
+    
+        p {
+            font-size: 2vw;
+        }
+    }
+
+    .instagram-container-left-bottom, .instagram-container-right-top {
+        height: 30vw;
+    }
+}
+
+@media screen and (480px <= width <= 768px) {
+    .shop-instagram-container {
+        width: 95%;
+        height: auto;
+    }
+
+    .instagram-container {
+        width: 100%;
+        height: 80vw;
+
+        .instagram-container-center-image {
+            width: 100%;
+            height: 35vw;
+            object-fit: cover;
+            aspect-ratio: auto;
+        }
+    }
+
+    .hints-container {
+        flex-wrap: wrap;
+
+        .hint {
+            width: 40%;
+            align-items: center;
+
+            h1 {
+                font-size: 3vw;
+            }
+    
+            p {
+                font-size: 2.2vw;
+            }
+        }
+    }
+
+    .instagram-container-left, .instagram-container-right {
+        height: 100%;
+        gap: 10px;
+        aspect-ratio: auto;
+    }
+
+    .instagram-container-left {
+        width: 55%;
+    }
+
+    .instagram-container-right {
+        width: 45%;
+    }
+
+    .instagram-container-left-top {
+        height: 28vw;
+
+        h1 {
+            font-size: 6.4vw;
+        }
+    
+        p {
+            font-size: 2.1vw;
+        }
+    }
+
+    .instagram-container-right-bottom {
+        height: 15vw;
+
+        h1 {
+            font-size: 4vw;
+        }
+    
+        p {
+            font-size: 2.2vw;
+        }
+    }
+
+    .instagram-container-left-bottom {
+        height: 25vw;
+    }
+
+    .instagram-container-right-top {
+        height: 27vw;
+    }
+
+    .instagram-container-right .instagram-container-big-image {
+        width: 100%;
+        height: 30vw;
+        object-fit: cover;
+        aspect-ratio: auto;
+    }
+
+    .instagram-container-right-top .instagram-container-small-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: auto;
+    }
+}
+
+@media screen and (width <= 480px) {
+    .shop-instagram-container {
+        width: 95%;
+        height: auto;
+    }
+
+    .instagram-container {
+        width: 100%;
+        height: 80vw;
+
+        .instagram-container-center-image {
+            width: 100%;
+            height: 60vw;
+            object-fit: cover;
+            aspect-ratio: auto;
+        }
+    }
+
+    .hints-container {
+        flex-wrap: wrap;
+
+        .hint {
+            width: 80%;
+            align-items: center;
+            justify-content: space-between;
+
+            h1 {
+                font-size: 4.5vw;
+            }
+    
+            p {
+                font-size: 2.6vw;
+            }
+        }
+    }
+
+    .instagram-container-left, .instagram-container-right {
+        height: 100%;
+        gap: 10px;
+        width: 50%;
+        aspect-ratio: auto;
+    }
+
+    .instagram-container-left-top {
+        height: 28vw;
+
+        h1 {
+            font-size: 6.6vw;
+        }
+    
+        p {
+            font-size: 2.3vw;
+        }
+    }
+
+    .instagram-container-right-bottom {
+        height: 20vw;
+
+        h1 {
+            font-size: 5.5vw;
+        }
+    
+        p {
+            font-size: 2.6vw;
+        }
+    }
+
+    .instagram-container-left-bottom {
+        height: 25vw;
+    }
+
+    .instagram-container-right-top {
+        height: 27vw;
+    }
+
+    .instagram-container-right .instagram-container-big-image {
+        display: none;
+    }
+
+    .instagram-container-right-top .instagram-container-small-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: auto;
     }
 }
