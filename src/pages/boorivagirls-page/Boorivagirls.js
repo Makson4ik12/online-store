@@ -22,7 +22,7 @@ const Boorivagirls = () => {
                 <img src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/8ced88916d0bacf0cdc41f49b72267e4c1ed563d"></img>
                 <img src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/6d527e1c70039eaf78671bce3e0212013782a77e"></img>
                 <text>Ставь тэг <span style={{color: "var(--accent2)"}}>#boorivagirls</span> чтобы быть<br></br>в нашей тусовке.</text>
-                <PinkVectorButton text="INSTAGRAM" width="60%"/>
+                <PinkVectorButton text="INSTAGRAM" componentId="boorivagirls-button"/>
               </div>
 
               <div className="boorivagirls-body-left-righthalf">

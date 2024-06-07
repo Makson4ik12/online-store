@@ -1,4 +1,4 @@
-.pink-vector-text-container, .pink-vector-button-container {
+.pink-vector-text-container, .pink-vector-button-container, .pink-vector-transparent-button-container {
     text-align: center;
     position: relative;
     display: inline-block;
@@ -24,7 +24,16 @@
 
 .pink-vector-button-container:hover {
     transform: scale(1.01, 1.01);
+
     svg path {
         fill: #fa94b9;
+    }
+}
+
+.pink-vector-transparent-button-container:hover {
+    transform: scale(1.01, 1.01);
+
+    svg path {
+        fill: #fa94b927;
     }
 }

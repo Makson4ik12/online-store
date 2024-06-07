@@ -54,7 +54,7 @@ const Shopcart = ({isComponent = false, closeHandler = () => {}}) => {
         ) : (
           <>
             <p>Сумма заказа: . . . . . . <b>{shopcartItems.reduce((total, item) => total += Number(item.price.replace(/ /g,'').slice(0, -1)), 0)} ₴</b></p>
-            <PinkVectorButton text="Оформить заказ" width="20vw" textSize="1.7vh" click={() => {closeHandler(); navigate("/order");}} />
+            <PinkVectorButton text="Оформить заказ" componentId="shopcart-button" click={() => {closeHandler(); navigate("/order");}} />
           </>
         )}
       </div>
@@ -80,7 +80,7 @@ const Shopcart = ({isComponent = false, closeHandler = () => {}}) => {
 
         <p>Твоя корзина пуста, но это никогда<br></br>не поздно исправить:)</p>
         
-        <PinkVectorButton text="ЗА ПОКУПКАМИ" width="20vw" textSize="1.7vh" click={closeHandler}/>
+        <PinkVectorButton text="ЗА ПОКУПКАМИ" componentId="shopcart-button" click={closeHandler}/>
       </div>
     );
   }
