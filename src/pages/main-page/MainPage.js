@@ -11,8 +11,7 @@ import TestDB from '../../test-data/products_db.json';
 import ProductCard from '../../components/ProductCard';
 import HandleResponsiveView, { screenSizes } from '../../features/ResponsiveView.ts';
 
-const NewProducts = () => {
-  const screenSize = HandleResponsiveView();
+const NewProducts = ({screenSize = {width: 0, name: ""}}) => {
   const products = TestDB.products.slice(0, ((screenSize.width === screenSizes.bigMobile.width) ? 3 : 4));
   
   return (
@@ -22,8 +21,7 @@ const NewProducts = () => {
   );
 }
 
-const TopProducts = () => {
-  const screenSize = HandleResponsiveView();
+const TopProducts = ({screenSize = {width: 0, name: ""}}) => {
   const miniCards = 
     <>
       <ProductCard 
@@ -81,20 +79,22 @@ const TopProducts = () => {
 }
 
 const MainPage = () => {
+  const screenSize = HandleResponsiveView();
+
   return (
     <div className="main-page-contaner">
       <TopCategories />
       <BigTitle title="НОВИНКИ" titleFontSize="5vw" descrFontSize="3vw" rightWaveOffset="1vw"/>
-      <NewProducts/>
-      <PinkVectorButton componentId="main-page-button" text="СМОТРЕТЬ ВСЕ" width='20vw' textSize="1vw"/>
+      <NewProducts screenSize={screenSize}/>
+      <PinkVectorButton componentId="main-page-button" text="СМОТРЕТЬ ВСЕ" />
       <img className="new-collection-image" src="https://www.figma.com/file/5kApz6MuwIO15ml8UVs5In/image/0301b260724e748a9a77dd641f1d98faad302fae" />
       <ShopMap />
       <RunningLine text="ТОПОВЫЕ ТОВАРЫ" />
-      <TopProducts />
-      <PinkVectorButton componentId="main-page-button" text="СМОТРЕТЬ ВСЕ" width='600' height="60px"/>
-      <BigTitle title="КОСТЮМЫ" />
+      <TopProducts screenSize={screenSize}/>
+      <PinkVectorButton componentId="main-page-button" text="СМОТРЕТЬ ВСЕ" />
+      <BigTitle title="КОСТЮМЫ" titleFontSize="5vw" descrFontSize="3vw" rightWaveOffset="1vw"/>
       <Suits />
-      <PinkVectorButton componentId="main-page-button" text="СМОТРЕТЬ ВСЕ" width='600' height="60px"/>
+      <PinkVectorButton componentId="main-page-button" text="СМОТРЕТЬ ВСЕ" />
       <ShopInstagram withHints={true}/>
       <BottomBar/>
     </div>

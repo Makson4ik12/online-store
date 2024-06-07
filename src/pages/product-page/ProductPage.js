@@ -52,8 +52,8 @@ const ProductPage = () => {
             </div>
 
             <div className='product-buttons-container'>
-              <PinkVectorButton text="В КОРЗИНУ" width="17vw" textSize="1.7vh" click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); setViewShopcart(true);}}/>
-              <PinkVectorButton text="БЫСТРЫЙ ЗАКАЗ" width="17vw" textSize="1.7vh" isTransparent={true} click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); navigate("/order");}}/>
+              <PinkVectorButton text="В КОРЗИНУ" width="17vw" componentId="product-button" click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); setViewShopcart(true);}}/>
+              <PinkVectorButton text="БЫСТРЫЙ ЗАКАЗ" width="17vw" componentId="product-button" isTransparent={true} click={() => {LocalDB.addItem("shopcartList", {id: product.id, size: currentSize.name}, true); navigate("/order");}}/>
             </div>
 
             <p>{product.description}</p>
@@ -101,7 +101,7 @@ const ProductPage = () => {
             </div>
             
             <div style={{width: "100%", justifyContent: "center", display: "flex", marginTop: "10px"}}>
-              <PinkVectorButton click={() => setViewSizesTable(true)} text="ТАБЛИЦА РАЗМЕРОВ" width="20vw" textSize="1.7vh" transparent="1"/>
+              <PinkVectorButton click={() => setViewSizesTable(true)} text="ТАБЛИЦА РАЗМЕРОВ" componentId="product-button" isTransparent={true}/>
             </div>
           </div>
         </div>

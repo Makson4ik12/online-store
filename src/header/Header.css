@@ -36,7 +36,7 @@
                 width: 8vw;
             
                 &:hover {
-                    transform: scale(1.1, 1.1);
+                    transform: scale(1.1, 1.1); 
                 }
             }
 
@@ -185,6 +185,11 @@
     right: 0;
     width: 30vw;
     height: 100%;
+}
+
+.empty-wishlist-modal {
+    aspect-ratio: 1 / 1;
+    height: 80%;
 }
 
 @media screen and (width <= 1300px) {

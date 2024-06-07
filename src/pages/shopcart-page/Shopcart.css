@@ -59,7 +59,7 @@
         transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 
         img {
-            width: 6vw;
+            width: 20%;
             object-fit: contain;
         }
 
@@ -70,6 +70,7 @@
             text-align: left;
             gap: 10px;
             justify-content: center;
+            width: 70%;
 
             h1 {
                 font-size: 1vw;
@@ -121,4 +122,14 @@
     gap: 20px;
     background-color: white;
     text-align: center;
+}
+
+#shopcart-button {
+    text-align: center;
+    width: 45%;
+
+    p {
+        font-size: 1vw;
+        width: 100%;
+    }
 }

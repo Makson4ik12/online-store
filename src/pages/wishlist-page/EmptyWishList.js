@@ -42,9 +42,9 @@ const EmptyWishList = ({onClose = () => {}}) => {
         <path d="M172.306 72.9138C174.097 75.3958 178 79.7562 179.277 77.342C180.874 74.3242 174.798 71.137 172.306 72.9138Z" stroke="#1F1F1F"/>
       </svg>
 
-      <text>Похоже тебе еще ничего не запало в сердечко....</text>
+      <text>Похоже, тебе еще ничего не запало в сердечко....</text>
 
-      <PinkVectorButton text="НА ГЛАВНУЮ" width='600' height="60px" click={onClose}/>
+      <PinkVectorButton text="НА ГЛАВНУЮ" componentId="empty-wishlist-button" click={onClose}/>
     </div>
   );
 }

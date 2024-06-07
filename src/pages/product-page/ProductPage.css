@@ -372,3 +372,12 @@
     background-color: var(--accent1);
 }
   
+#product-button {
+    text-align: center;
+    width: 40%;
+
+    p {
+        font-size: 0.9vw;
+        width: 100%;
+    }
+}

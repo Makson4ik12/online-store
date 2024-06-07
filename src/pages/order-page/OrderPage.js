@@ -119,7 +119,7 @@ const OrderPage = () => {
               </div>
             </div>
           </div> 
-          <PinkVectorButton text="Подтвердить заказ" width="20vw" textSize="0.7vw" click={() => onAcceptOrder(true)}/>          
+          <PinkVectorButton text="Подтвердить заказ" componentId="order-button" click={() => onAcceptOrder(true)}/>          
         </div>
         <Shopcart isComponent={true}/>
       </div>
