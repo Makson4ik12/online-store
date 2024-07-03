@@ -6,6 +6,6 @@ Online store website, created by Figma template
 
 ## Stack
 
-* React via create-react-app (with react-router-dom, react-responsive-modal
+* React via create-react-app (with react-router-dom, react-responsive-modal)
 * HTML5 & CSS3
 * JavaScript
